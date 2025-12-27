@@ -11,6 +11,7 @@ import {
   PublicationsSchema,
 } from "./schemas";
 
+/** Read JSON relative to /src */
 function readJSON(relFromSrc: string) {
   const p = path.join(process.cwd(), "src", relFromSrc);
 
@@ -21,44 +22,63 @@ function readJSON(relFromSrc: string) {
   return JSON.parse(fs.readFileSync(p, "utf-8"));
 }
 
+/* ---------------- Navigation ---------------- */
+
 export function getNav() {
   return NavSchema.parse(readJSON("content/nav.json"));
 }
+
+/* ---------------- Home ---------------- */
 
 export function getHome() {
   return HomeSchema.parse(readJSON("content/home.json"));
 }
 
-export function getEducation() {
-  return EducationSchema.parse(readJSON("content/education.json")).education;
-}
+/* ---------------- Profile ---------------- */
 
 export function getProfile() {
   return ProfileSchema.parse(readJSON("content/profile.json"));
 }
 
-export function getExperience() {
-  return ExperienceSchema.parse(readJSON("content/experience.json")).experience;
+/* ---------------- Education (ARRAY) ---------------- */
+
+export function getEducation() {
+  return EducationSchema.parse(readJSON("content/education.json"));
 }
 
-export function getProjects() {
-  return ProjectsSchema.parse(readJSON("content/projects.json")).projects;
+/* ---------------- Experience (ARRAY) ---------------- */
+
+export function getExperience() {
+  return ExperienceSchema.parse(readJSON("content/experience.json"));
 }
+
+/* ---------------- Projects (ARRAY) ---------------- */
+
+export function getProjects() {
+  return ProjectsSchema.parse(readJSON("content/projects.json"));
+}
+
+/* ---------------- Publications (ARRAY) ---------------- */
 
 export function getPublications() {
   return PublicationsSchema.parse(readJSON("content/publications.json"))
-    .publications.slice()
-    .sort((a, b) => b.year - a.year);
+    .slice()
+    .sort((a: any, b: any) => (b.year ?? 0) - (a.year ?? 0));
 }
+
+/* ---------------- Blog ---------------- */
 
 export function getBlogPosts() {
   return BlogPostsSchema.parse(readJSON("content/blogposts.json"))
-    .posts.filter((p) => !p.draft)
+    .filter((p: any) => !p.draft)
     .slice()
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
 }
 
 export function getBlogPostBySlug(slug: string) {
-  const posts = BlogPostsSchema.parse(readJSON("content/blogposts.json")).posts;
-  return posts.find((p) => p.slug === slug && !p.draft) ?? null;
+  const posts = BlogPostsSchema.parse(
+    readJSON("content/blogposts.json")
+  );
+
+  return posts.find((p: any) => p.slug === slug && !p.draft) ?? null;
 }
