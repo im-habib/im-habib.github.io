@@ -35,6 +35,11 @@ export const EducationItemSchema = z.object({
   start_date: z.string(),
   end_date: z.string(),
   details: z.array(z.string()).optional(),
+  links: z
+    .object({
+      institution: z.string().optional(),
+    })
+    .optional(),
 });
 
 export const EducationSchema = z.object({
