@@ -31,7 +31,7 @@ export default function CVPage() {
         ) : null}
 
         <div className="mt-3 text-sm muted">
-          {profile.affiliation.institution}
+          {profile?.affiliation?.institution!}
           {profile.affiliation.department
             ? ` · ${profile.affiliation.department}`
             : ""}
