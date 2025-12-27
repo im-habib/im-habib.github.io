@@ -1,0 +1,16 @@
+{
+  "publications": [
+    {
+      "id": "ecmlpkdd-2026-overfitting-transformers",
+      "title": "An Empirical Study of Overfitting and Stability in Transformer-Based Financial Time Series Forecasting",
+      "authors": ["Pippo Ai"],
+      "year": 2026,
+      "type": "conference",
+      "venue": { "name": "ECML PKDD", "tier": "A" },
+      "status": "under_review",
+      "links": {
+        "code": "https://github.com/yourusername/fin-transformer-study"
+      }
+    }
+  ]
+}

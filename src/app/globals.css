@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+/* =========================
+   THEME TOKENS (next-themes)
+   Light is :root
+   Dark is html.dark
+   ========================= */
+
+/* LIGHT — AcademicPages-like (very subtle chrome) */
+:root {
+  /* Base */
+  --background: #ffffff;
+  --foreground: #0f172a;
+
+  /* Chrome (header/sidebar) — almost white */
+  --surface: #fcfcfd;
+  --surface2: #ffffff;
+
+  /* Text */
+  --muted: #475569;
+  --muted2: #64748b;
+
+  /* Borders — soft */
+  --border: #e5e7eb;
+
+  /* Accent */
+  --link: #0369a1;
+  --link-hover: #075985;
+
+  /* Hover */
+  --hover: #f8fafc;
+  --ring: #38bdf8;
+
+  /* Selection */
+  --selection: rgba(14, 165, 233, 0.18);
+
+  /* Code */
+  --code-bg: #0b1220;
+  --code-fg: #e5e7eb;
+}
+
+/* DARK — clear separation */
+html.dark {
+  --background: #0b0f19;
+  --foreground: #e5e7eb;
+
+  --surface: #111827;
+  --surface2: #0b1220;
+
+  --muted: #9ca3af;
+  --muted2: #6b7280;
+
+  --border: #1f2937;
+
+  --link: #7dd3fc;
+  --link-hover: #bae6fd;
+
+  --hover: #1e293b;
+  --ring: #38bdf8;
+
+  --selection: rgba(125, 211, 252, 0.25);
+
+  --code-bg: #060a12;
+  --code-fg: #e5e7eb;
+}
+
+/* =========================
+   GLOBAL ELEMENTS
+   ========================= */
+
+html,
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+::selection {
+  background: var(--selection);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+small,
+.muted {
+  color: var(--muted2);
+}
+
+hr {
+  border-color: var(--border);
+}
+
+/* Typography */
+h1 {
+  color: var(--foreground);
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+h2 {
+  color: var(--foreground);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+h3 {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+p {
+  color: var(--foreground);
+  line-height: 1.75rem;
+}
+
+/* =========================
+   LAYOUT TAGS
+   ========================= */
+
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+aside {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+/* Lock FontAwesome icon size in sidebar */
+aside svg[data-icon],
+aside .svg-inline--fa {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+main {
+  background: var(--background);
+}
+
+/* Make chrome borders EXTRA subtle in light mode only */
+:root header,
+:root aside {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* =========================
+   COMPONENT-LIKE ELEMENTS
+   ========================= */
+
+/* Card uses <article> */
+article {
+  background: var(--surface2);
+  /* border: 1px solid var(--border);
+  border-radius: 16px; */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Section header underline (your screenshot) */
+h2[data-section="true"] {
+  display: inline-block;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 4px;
+}
+
+/* Pills / buttons */
+a[data-pill="true"],
+button[data-pill="true"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* border: 1px solid var(--border);
+  border-radius: 9999px; */
+  padding: 0.35rem 0.85rem;
+  font-size: 0.875rem;
+  background: transparent;
+  color: var(--link);
+  text-decoration: none;
+}
+
+a[data-pill="true"]:hover,
+button[data-pill="true"]:hover {
+  background: var(--hover);
+  text-decoration: none;
+}
+
+/* Focus ring */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Code blocks */
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  color: var(--code-fg);
+  background: var(--code-bg);
+  /* border-radius: 12px; */
+  /* border: 1px solid var(--border); */
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* Sidebar small polish */
+aside p {
+  color: var(--muted);
+}

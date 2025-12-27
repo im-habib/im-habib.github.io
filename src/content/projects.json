@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "id": "ai-automotive-saas-platform",
+      "title": "AI-Driven Automotive SaaS Platform",
+      "type": "industry",
+      "status": "active",
+      "period": { "start": "2021-05", "end": "Present" },
+      "summary": "A modular SaaS platform for automotive service centers integrating customer management, marketing automation, telematics, and AI-based diagnostics.",
+      "impact": [
+        "33.33% improvement in storage efficiency",
+        "~15% backend query performance improvement",
+        "~10% customer satisfaction increase via AI diagnostics"
+      ],
+      "technologies": [
+        "Python",
+        "TypeScript",
+        "Node.js",
+        "Microservices",
+        "CI/CD"
+      ],
+      "links": { "company": "https://internazionaleauto.it" }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "site_title": "Your Name / Site Title",
+  "items": [
+    { "label": "Publications", "href": "/publications", "enabled": true },
+    { "label": "Projects", "href": "/projects", "enabled": true },
+    { "label": "Blog Posts", "href": "/blog", "enabled": true },
+    { "label": "CV", "href": "/cv", "enabled": true },
+    { "label": "Talks", "href": "/talks", "enabled": false },
+    { "label": "Teaching", "href": "/teaching", "enabled": false },
+    { "label": "Guide", "href": "/guide", "enabled": false }
+  ]
+}

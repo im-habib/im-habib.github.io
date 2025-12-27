@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "headline": "PhD Researcher in Adaptive Neurofeedback and Deep Reinforcement Learning",
+    "body": [
+      "I am a PhD researcher working on adaptive EEG neurofeedback systems using deep reinforcement learning. My work focuses on closing the feedback loop between neural state estimation and control, with the goal of building personalized, stable, and robust neurofeedback pipelines.",
+      "My research interests lie at the intersection of brain–computer interfaces (BCI), reinforcement learning, and time-series modeling. In particular, I study how learning-based control policies can adapt to non-stationary neural signals while avoiding overfitting and instability across sessions and individuals.",
+      "Alongside academic research, I have several years of experience building production-grade software systems. I have designed and deployed scalable SaaS platforms, implemented microservice architectures, and applied machine learning models in real-world environments where reliability, latency, and measurable impact are critical.",
+      "This dual background in research and engineering shapes my approach: I prioritize models and algorithms that are not only theoretically sound, but also deployable, interpretable, and resilient under real operational constraints."
+    ]
+  },
+  "stories": [
+    {
+      "id": "adaptive-neurofeedback-control",
+      "title": "Adaptive Neurofeedback as a Control Problem",
+      "body": [
+        "Traditional neurofeedback systems rely on static thresholds and handcrafted rules. However, neural signals are inherently non-stationary: cognitive state, fatigue, and learning dynamics evolve continuously over time.",
+        "I approach neurofeedback as a sequential decision-making problem. By framing feedback modulation as a reinforcement learning task, it becomes possible to learn policies that adapt in real time to changes in neural state rather than reacting to fixed heuristics.",
+        "My current work explores reward design, policy constraints, and stability mechanisms that balance adaptability with robustness, especially in long-horizon training scenarios."
+      ],
+      "href": "/projects/adaptive-eeg-neurofeedback",
+      "images": [
+        "EEG neurofeedback laboratory",
+        "brain computer interface EEG visualization",
+        "reinforcement learning control system diagram"
+      ]
+    },
+    {
+      "id": "financial-time-series-overfitting",
+      "title": "Why Financial Time Series Taught Me About Overfitting",
+      "body": [
+        "Before focusing on neurofeedback, I studied reinforcement learning and transformer-based models in financial time series forecasting. Financial markets are noisy, adversarial, and unforgiving to overfitted models.",
+        "Through extensive experimentation, I observed that strong in-sample performance often concealed severe instability and degradation out of sample. These findings motivated a deeper interest in robustness, generalization, and evaluation methodology.",
+        "The lessons learned in finance—risk awareness, distribution shift, and stability—now directly inform how I design learning systems for neural data."
+      ],
+      "href": "/projects/financial-deep-reinforcement-learning",
+      "images": [
+        "financial time series chart",
+        "reinforcement learning trading agent architecture",
+        "transformer model overfitting visualization"
+      ]
+    },
+    {
+      "id": "engineering-to-production",
+      "title": "Engineering Reality: From Models to Production",
+      "body": [
+        "In parallel with academic research, I work as a software engineer building large-scale SaaS platforms. These systems operate under real constraints: uptime, latency, cost, and maintainability are non-negotiable.",
+        "This experience has fundamentally shaped how I evaluate machine learning research. A model that cannot be monitored, updated, or debugged in production is incomplete.",
+        "I aim to bridge this gap by designing learning systems that are not only accurate, but observable, maintainable, and compatible with modern software infrastructure."
+      ],
+      "href": "/experience/autofficina-internazionale",
+      "images": [
+        "microservices architecture diagram",
+        "SaaS platform dashboard",
+        "machine learning production system architecture"
+      ]
+    }
+  ]
+}

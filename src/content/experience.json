@@ -1,0 +1,30 @@
+{
+  "experience": [
+    {
+      "id": "software-engineer-autofficina-internazionale",
+      "role": "Software Engineer (Remote)",
+      "organization": "Autofficina Internazionale s.a.s",
+      "type": "industry",
+      "location": "Remote / Italy",
+      "start_date": "2021-05",
+      "end_date": "Present",
+      "description": "Development and maintenance of SaaS platforms supporting automotive service operations, customer management, marketing automation, and telematics-based solutions.",
+      "highlights": [
+        "Built a multi-service SaaS platform including appointment management, marketing system, dynamic page builder, URL shortener, and telematics integration.",
+        "Implemented and documented data optimizations achieving ~33.33% improvement in storage efficiency.",
+        "Developed a Deep Neural Network model covering 14 vehicle problem categories, contributing to ~10% increase in customer satisfaction.",
+        "Improved server query response time by ~15% through microservices architecture, distributed communication services, and CI/CD pipeline optimization."
+      ],
+      "technologies": [
+        "Python",
+        "TypeScript",
+        "Node.js",
+        "Microservices",
+        "CI/CD",
+        "Deep Learning",
+        "Telematics"
+      ],
+      "links": { "company": "https://internazionaleauto.it" }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "pippo-ai",
+  "name": { "full": "Pippo Ai", "title": "PhD Researcher" },
+  "affiliation": {
+    "institution": "Xi’an Jiaotong University",
+    "department": "Biomedical Engineering",
+    "location": "Xi’an, China"
+  },
+  "bio": "Researcher working on adaptive EEG neurofeedback and deep reinforcement learning.",
+  "bio_short": "Researcher working on adaptive EEG neurofeedback and deep reinforcement learning.",
+  "avatar": "/avatar.jpg",
+  "contact": {
+    "email": "pippo.ai@university.edu",
+    "website": "https://yourdomain.com",
+    "location": "Xi’an, China"
+  },
+  "social": {
+    "google_scholar": "https://scholar.google.com/citations?user=XXXX",
+    "orcid": "https://orcid.org/0000-0000-0000-0000",
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername"
+  },
+  "cv": { "pdf": "/files/cv.pdf" }
+}
