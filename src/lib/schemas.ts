@@ -98,22 +98,29 @@ export const PublicationSchema = z.object({
   id: z.string(),
   title: z.string(),
   authors: z.array(z.string()),
-  year: z.number().optional(), // HTML didn't always include year; don't crash builds
+  year: z.number().optional(),
   type: z.enum(["conference", "journal", "workshop", "preprint"]).optional(),
+
   venue: z
-    .object({
-      name: z.string(),
-      tier: z.string().optional(),
-      location: z.string().optional(),
-    })
+    .union([
+      z.string(),
+      z.object({
+        name: z.string(),
+        tier: z.string().optional(),
+        location: z.string().optional(),
+      }),
+    ])
     .optional(),
+
   status: z
     .enum(["published", "under_review", "preprint", "in_preparation"])
     .optional(),
+
   abstract: z.string().optional(),
   keywords: z.array(z.string()).optional(),
   links: LinksSchema,
 });
+
 export const PublicationsSchema = z.array(PublicationSchema);
 
 /** ---------- Projects (ARRAY) ---------- */
@@ -135,6 +142,7 @@ export const ProjectSchema = z.object({
   technologies: z.array(z.string()).optional(),
   links: LinksSchema,
 });
+
 export const ProjectsSchema = z.array(ProjectSchema);
 
 /** JSON-only blog blocks (safe rendering; no raw HTML) */
