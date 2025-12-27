@@ -143,7 +143,7 @@ export const BlogBlockSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("h3"), text: z.string() }),
   z.object({ type: z.literal("p"), text: z.string() }),
   z.object({ type: z.literal("ul"), items: z.array(z.string()) }),
-  z.object({ type: z.literal("ol"), items: z.array(zstring()) }),
+  z.object({ type: z.literal("ol"), items: z.array(z.string()) }),
   z.object({
     type: z.literal("quote"),
     text: z.string(),
