@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://im-habib.github.io/sitemap.xml
