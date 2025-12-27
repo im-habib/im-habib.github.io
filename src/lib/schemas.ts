@@ -120,7 +120,7 @@ export const PublicationsSchema = z.array(PublicationSchema);
 export const ProjectSchema = z.object({
   id: z.string(),
   title: z.string(),
-  type: z.enum(["research", "industry", "engineering"]).optional(), // allow your earlier "engineering"
+  type: z.enum(["research", "industry", "engineering"]),
   status: z.enum(["active", "ongoing", "completed"]).optional(),
   period: z
     .object({
