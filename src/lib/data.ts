@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import {
+  BlogPost,
   NavSchema,
   HomeSchema,
   ProfileSchema,
@@ -68,17 +69,14 @@ export function getPublications() {
 
 /* ---------------- Blog ---------------- */
 
-export function getBlogPosts() {
+export function getBlogPosts(): BlogPost[] {
   return BlogPostsSchema.parse(readJSON("content/blogposts.json"))
-    .filter((p: any) => !p.draft)
+    .posts.filter((p) => !p.draft)
     .slice()
-    .sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export function getBlogPostBySlug(slug: string) {
-  const posts = BlogPostsSchema.parse(
-    readJSON("content/blogposts.json")
-  );
-
-  return posts.find((p: any) => p.slug === slug && !p.draft) ?? null;
+export function getBlogPostBySlug(slug: string): BlogPost | null {
+  const posts = BlogPostsSchema.parse(readJSON("content/blogposts.json")).posts;
+  return posts.find((p) => p.slug === slug && !p.draft) ?? null;
 }

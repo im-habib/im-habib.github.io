@@ -167,5 +167,9 @@ export const BlogPostSchema = z.object({
   links: LinksSchema,
   content: z.array(BlogBlockSchema),
 });
-export const BlogPostsSchema = z.array(BlogPostSchema);
 
+export const BlogPostsSchema = z.object({
+  posts: z.array(BlogPostSchema),
+});
+
+export type BlogPost = z.infer<typeof BlogPostSchema>;
