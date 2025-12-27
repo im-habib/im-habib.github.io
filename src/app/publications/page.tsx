@@ -1,63 +1,95 @@
 import Card from "@/components/Card";
 import LinkPill from "@/components/LinkPill";
+import SectionHeader from "@/components/SectionHeader";
 import { getPublications } from "@/lib/data";
 
 export const metadata = { title: "Publications" };
 
 export default function PublicationsPage() {
-  const pubs = getPublications();
-  const years = Array.from(new Set(pubs.map((p) => p.year))).sort(
-    (a, b) => b - a
-  );
+  const publications = getPublications();
+
+  if (!publications.length) {
+    return <div className="text-sm muted">No publications available.</div>;
+  }
 
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-semibold">Publications</h1>
+      <SectionHeader title="Publications" />
 
-      <div className="flex flex-wrap gap-2">
-        {years.map((y) => (
-          <a
-            key={y}
-            href={`#y-${y}`}
-            className="rounded-full border px-3 py-1 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800"
-          >
-            {y}
-          </a>
-        ))}
-      </div>
+      <div className="space-y-4">
+        {publications.map((p) => {
+          const yearLabel = p.year ? p.year.toString() : null;
+          const venueName = p.venue?.name;
+          const venueTier = p.venue?.tier;
+          const venueLocation = p.venue?.location;
 
-      <div className="space-y-8">
-        {years.map((y) => (
-          <section key={y} id={`y-${y}`} className="space-y-4">
-            <h2 className="text-xl font-semibold">{y}</h2>
+          return (
+            <Card key={p.id}>
+              {/* Title */}
+              <div className="text-lg font-semibold">
+                {p.title}
+              </div>
 
-            <div className="space-y-4">
-              {pubs
-                .filter((p) => p.year === y)
-                .map((p) => (
-                  <Card key={p.id}>
-                    <div className="text-lg font-semibold">{p.title}</div>
-                    <div className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-                      {p.authors.join(", ")}
-                    </div>
-                    <div className="mt-1 text-sm text-neutral-700 dark:text-neutral-300">
-                      {p.venue.name}
-                      {p.venue.tier ? ` · ${p.venue.tier}` : ""}
-                      {p.status ? ` · ${p.status.replaceAll("_", " ")}` : ""}
-                    </div>
+              {/* Authors */}
+              <div className="mt-1 text-sm muted">
+                {p.authors.join(", ")}
+              </div>
 
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      <LinkPill href={p.links?.pdf} label="PDF" />
-                      <LinkPill href={p.links?.arxiv} label="arXiv" />
-                      <LinkPill href={p.links?.code} label="Code" />
-                      <LinkPill href={p.links?.bibtex} label="BibTeX" />
-                      <LinkPill href={p.links?.doi} label="DOI" />
-                    </div>
-                  </Card>
-                ))}
-            </div>
-          </section>
-        ))}
+              {/* Venue / year */}
+              {(venueName || yearLabel) ? (
+                <div className="mt-1 text-sm muted">
+                  {venueName ? venueName : ""}
+                  {venueTier ? ` · ${venueTier}` : ""}
+                  {venueLocation ? ` · ${venueLocation}` : ""}
+                  {yearLabel ? ` · ${yearLabel}` : ""}
+                </div>
+              ) : null}
+
+              {/* Abstract */}
+              {p.abstract ? (
+                <p className="mt-3">
+                  {p.abstract}
+                </p>
+              ) : null}
+
+              {/* Keywords */}
+              {p.keywords?.length ? (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {p.keywords.map((k) => (
+                    <span
+                      key={k}
+                      className="text-xs px-2 py-0.5 rounded border"
+                      style={{ borderColor: "var(--border)" }}
+                    >
+                      {k}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+
+              {/* Links */}
+              {(p.links && Object.keys(p.links).length > 0) ? (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {p.links.paper ? (
+                    <LinkPill href={p.links.paper} label="Paper" />
+                  ) : null}
+
+                  {p.links.doi ? (
+                    <LinkPill href={p.links.doi} label="DOI" />
+                  ) : null}
+
+                  {p.links.arxiv ? (
+                    <LinkPill href={p.links.arxiv} label="arXiv" />
+                  ) : null}
+
+                  {p.links.code ? (
+                    <LinkPill href={p.links.code} label="Code" />
+                  ) : null}
+                </div>
+              ) : null}
+            </Card>
+          );
+        })}
       </div>
     </div>
   );

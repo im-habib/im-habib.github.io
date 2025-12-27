@@ -128,7 +128,7 @@ export default function CVPage() {
                   <div className="text-lg font-semibold">{p.title}</div>
 
                   <div className="mt-1 text-sm muted">
-                    {(p.type ?? "project").toUpperCase()}
+                    {(p.type ?? "project").toString().toUpperCase()}
                     {p.status ? ` · ${p.status}` : ""}
                     {p.period ? ` · ${p.period.start} – ${p.period.end}` : ""}
                   </div>

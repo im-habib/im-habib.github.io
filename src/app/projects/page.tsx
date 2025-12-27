@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
-import Tag from "@/components/Tag";
 import LinkPill from "@/components/LinkPill";
+import SectionHeader from "@/components/SectionHeader";
 import { getProjects } from "@/lib/data";
 
 export const metadata = { title: "Projects" };
@@ -8,52 +8,74 @@ export const metadata = { title: "Projects" };
 export default function ProjectsPage() {
   const projects = getProjects();
 
+  if (!projects.length) {
+    return (
+      <div className="text-sm muted">
+        No projects available.
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-semibold">Projects</h1>
+      <SectionHeader title="Projects" />
 
       <div className="space-y-4">
-        {projects.map((p) => (
-          <Card key={p.id}>
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <div className="text-lg font-semibold">{p.title}</div>
-                <div className="text-sm text-neutral-600 dark:text-neutral-400">
-                  {p.type.toUpperCase()}
-                  {p.status ? ` · ${p.status}` : ""}
-                  {p.period ? ` · ${p.period.start} – ${p.period.end}` : ""}
+        {projects.map((p) => {
+          const typeLabel = (p.type ?? "project").toUpperCase();
+          const thesis = p.links?.["thesis"];
+
+          return (
+            <Card key={p.id}>
+              {/* Title */}
+              <div className="text-lg font-semibold">
+                {p.title}
+              </div>
+
+              {/* Meta */}
+              <div className="mt-1 text-sm muted">
+                {typeLabel}
+                {p.status ? ` · ${p.status}` : ""}
+                {p.period ? ` · ${p.period.start} – ${p.period.end}` : ""}
+              </div>
+
+              {/* Summary */}
+              <p className="mt-3">
+                {p.summary}
+              </p>
+
+              {/* Impact */}
+              {p.impact?.length ? (
+                <ul className="mt-3 list-disc space-y-1 pl-6">
+                  {p.impact.map((i) => (
+                    <li key={i}>{i}</li>
+                  ))}
+                </ul>
+              ) : null}
+
+              {/* Links */}
+              {(p.links && Object.keys(p.links).length > 0) ? (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {p.links.github ? (
+                    <LinkPill href={p.links.github} label="GitHub" />
+                  ) : null}
+
+                  {p.links.paper ? (
+                    <LinkPill href={p.links.paper} label="Paper" />
+                  ) : null}
+
+                  {p.links.demo ? (
+                    <LinkPill href={p.links.demo} label="Demo" />
+                  ) : null}
+
+                  {thesis ? (
+                    <LinkPill href={thesis} label="Thesis" />
+                  ) : null}
                 </div>
-              </div>
-            </div>
-
-            <p className="mt-3 leading-7 text-neutral-800 dark:text-neutral-200">
-              {p.summary}
-            </p>
-
-            {p.impact?.length ? (
-              <ul className="mt-3 list-disc space-y-1 pl-6">
-                {p.impact.map((i) => (
-                  <li key={i}>{i}</li>
-                ))}
-              </ul>
-            ) : null}
-
-            {p.technologies?.length ? (
-              <div className="mt-4 flex flex-wrap gap-2">
-                {p.technologies.map((t) => (
-                  <Tag key={t} label={t} />
-                ))}
-              </div>
-            ) : null}
-
-            <div className="mt-4 flex flex-wrap gap-2">
-              <LinkPill href={p.links?.github} label="GitHub" />
-              <LinkPill href={p.links?.paper} label="Paper" />
-              <LinkPill href={p.links?.demo} label="Demo" />
-              <LinkPill href={p.links?.company} label="Company" />
-            </div>
-          </Card>
-        ))}
+              ) : null}
+            </Card>
+          );
+        })}
       </div>
     </div>
   );
