@@ -1,16 +1,30 @@
-{
-  "publications": [
-    {
-      "id": "ecmlpkdd-2026-overfitting-transformers",
-      "title": "An Empirical Study of Overfitting and Stability in Transformer-Based Financial Time Series Forecasting",
-      "authors": ["Pippo Ai"],
-      "year": 2026,
-      "type": "conference",
-      "venue": { "name": "ECML PKDD", "tier": "A" },
-      "status": "under_review",
-      "links": {
-        "code": "https://github.com/yourusername/fin-transformer-study"
-      }
+[
+  {
+    "id": "fiscal-tax-csr-chinese-agri",
+    "title": "Research on the Impact of Fiscal and Tax Policies And Social Responsibility on the Financial Performance of Listed Chinese Agricultural Companies",
+    "authors": [
+      "Md Mostafijur Rahman",
+      "Mohsina Khatun",
+      "Abu Sayem Md Habibullah"
+    ],
+    "venue": "International Journal of Law, Humanities & Social Science",
+    "year": 2023,
+    "links": {
+      "paper": "https://d1wqtxts1xzle7.cloudfront.net/100181321/7._IJLHSS_02_20_29-libre.pdf?1679568201=&response-content-disposition=inline%3B+filename%3DResearch_on_the_Impact_of_Fiscal_and_Tax.pdf"
     }
-  ]
-}
+  },
+  {
+    "id": "csr-envreg-finperf-heavy-pollution",
+    "title": "An empirical study on corporate social responsibility, environmental regulation and financial performance — Based on heavy pollution industry",
+    "authors": [
+      "Md Mostafijur Rahman",
+      "Yanchun Zhu",
+      "Abu Sayem Md Habibullah"
+    ],
+    "venue": "INTERNATIONAL JOURNAL OF BUSINESS, SOCIAL AND SCIENTIFIC RESEARCH",
+    "year": 2023,
+    "links": {
+      "paper": "https://www.ijbssr.com/currentissueview/14013441"
+    }
+  }
+]

@@ -1,57 +1,53 @@
 {
   "summary": {
-    "headline": "PhD Researcher in Adaptive Neurofeedback and Deep Reinforcement Learning",
+    "headline": "PhD Researcher in Deep Reinforcement Learning for Financial Systems",
     "body": [
-      "I am a PhD researcher working on adaptive EEG neurofeedback systems using deep reinforcement learning. My work focuses on closing the feedback loop between neural state estimation and control, with the goal of building personalized, stable, and robust neurofeedback pipelines.",
-      "My research interests lie at the intersection of brain–computer interfaces (BCI), reinforcement learning, and time-series modeling. In particular, I study how learning-based control policies can adapt to non-stationary neural signals while avoiding overfitting and instability across sessions and individuals.",
-      "Alongside academic research, I have several years of experience building production-grade software systems. I have designed and deployed scalable SaaS platforms, implemented microservice architectures, and applied machine learning models in real-world environments where reliability, latency, and measurable impact are critical.",
-      "This dual background in research and engineering shapes my approach: I prioritize models and algorithms that are not only theoretically sound, but also deployable, interpretable, and resilient under real operational constraints."
+      "I am pursuing a Doctor of Philosophy (PhD) in Computer Science and Technology at Xidian University (XDU), specializing in Deep Reinforcement Learning (DRL) for Financial Systems.",
+      "My research focuses on integrating DRL in financial modeling and real-time market adaptation to improve stock trading and portfolio management under non-stationary market conditions.",
+      "Alongside research, I build production SaaS systems at Autofficina Internazionale s.a.s, working on customer appointment management, marketing systems, dynamic page building, URL shorteners, and telematics—where performance, reliability, and measurable impact matter."
     ]
   },
   "stories": [
     {
-      "id": "adaptive-neurofeedback-control",
-      "title": "Adaptive Neurofeedback as a Control Problem",
+      "id": "neurasynk",
+      "title": "Neurasynk – Adaptive Brain Network Neurofeedback via Deep Reinforcement Learning",
       "body": [
-        "Traditional neurofeedback systems rely on static thresholds and handcrafted rules. However, neural signals are inherently non-stationary: cognitive state, fatigue, and learning dynamics evolve continuously over time.",
-        "I approach neurofeedback as a sequential decision-making problem. By framing feedback modulation as a reinforcement learning task, it becomes possible to learn policies that adapt in real time to changes in neural state rather than reacting to fixed heuristics.",
-        "My current work explores reward design, policy constraints, and stability mechanisms that balance adaptability with robustness, especially in long-horizon training scenarios."
+        "A real-time, closed-loop neurofeedback system leveraging Deep Reinforcement Learning (DRL) to dynamically modulate brain networks.",
+        "It synchronizes EEG-based brain connectivity features with adaptive feedback strategies to deliver personalized cognitive enhancement and non-invasive therapeutic interventions."
       ],
-      "href": "/projects/adaptive-eeg-neurofeedback",
+      "href": "/details/neurasynk",
       "images": [
-        "EEG neurofeedback laboratory",
-        "brain computer interface EEG visualization",
-        "reinforcement learning control system diagram"
+        "EEG neurofeedback system",
+        "brain network connectivity visualization",
+        "reinforcement learning closed loop diagram"
       ]
     },
     {
-      "id": "financial-time-series-overfitting",
-      "title": "Why Financial Time Series Taught Me About Overfitting",
+      "id": "tipo",
+      "title": "End-to-End Technical Indicator Parameter Optimization (Dynamic Approach)",
       "body": [
-        "Before focusing on neurofeedback, I studied reinforcement learning and transformer-based models in financial time series forecasting. Financial markets are noisy, adversarial, and unforgiving to overfitted models.",
-        "Through extensive experimentation, I observed that strong in-sample performance often concealed severe instability and degradation out of sample. These findings motivated a deeper interest in robustness, generalization, and evaluation methodology.",
-        "The lessons learned in finance—risk awareness, distribution shift, and stability—now directly inform how I design learning systems for neural data."
+        "A framework that automates technical indicator parameter optimization and rigorous validation.",
+        "Designed to establish a stronger standard for evaluating indicator-based trading strategies with thorough testing across parameters and conditions."
       ],
-      "href": "/projects/financial-deep-reinforcement-learning",
+      "href": "/details/tipo",
       "images": [
-        "financial time series chart",
-        "reinforcement learning trading agent architecture",
-        "transformer model overfitting visualization"
+        "technical indicators trading chart",
+        "backtesting performance metrics",
+        "hyperparameter optimization diagram"
       ]
     },
     {
-      "id": "engineering-to-production",
-      "title": "Engineering Reality: From Models to Production",
+      "id": "siopa",
+      "title": "SIOPA – Stock Indicator Optimization and Predictive Analysis",
       "body": [
-        "In parallel with academic research, I work as a software engineer building large-scale SaaS platforms. These systems operate under real constraints: uptime, latency, cost, and maintainability are non-negotiable.",
-        "This experience has fundamentally shaped how I evaluate machine learning research. A model that cannot be monitored, updated, or debugged in production is incomplete.",
-        "I aim to bridge this gap by designing learning systems that are not only accurate, but observable, maintainable, and compatible with modern software infrastructure."
+        "A deep neural network framework to classify and predict optimal stock indicator parameters.",
+        "Uses historical data and backtesting metrics (Sharpe ratio, max drawdown) to streamline parameter optimization and improve trading performance."
       ],
-      "href": "/experience/autofficina-internazionale",
+      "href": "/projects/siopa",
       "images": [
-        "microservices architecture diagram",
-        "SaaS platform dashboard",
-        "machine learning production system architecture"
+        "stock indicator optimization",
+        "deep neural network architecture",
+        "time series forecasting chart"
       ]
     }
   ]

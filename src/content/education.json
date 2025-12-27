@@ -1,40 +1,46 @@
-{
-  "education": [
-    {
-      "id": "phd-xjtu-bme",
-      "degree": "PhD in Biomedical Engineering",
-      "institution": "Xi’an Jiaotong University",
-      "location": "Xi’an, China",
-      "start_date": "2024-09",
-      "end_date": "Present",
-      "details": [
-        "Focus: Adaptive EEG neurofeedback using deep reinforcement learning",
-        "Research areas: EEG/BCI, deep RL, optimization"
-      ]
-    },
-    {
-      "id": "meng-xidian-cs",
-      "degree": "MEng in Computer Science",
-      "institution": "Xidian University",
-      "location": "Xi’an, China",
-      "start_date": "2021-09",
-      "end_date": "2023-06",
-      "details": [
-        "Thesis: Financial Deep Reinforcement Learning (FinDRL)",
-        "Work: RL agents, risk-aware reward design, backtesting"
-      ]
-    },
-    {
-      "id": "be-yunnan-cs",
-      "degree": "BE in Computer Science",
-      "institution": "Yunnan University",
-      "location": "Kunming, China",
-      "start_date": "2017-09",
-      "end_date": "2021-06",
-      "details": [
-        "Focus: Cross-border e-commerce systems",
-        "Projects: Web systems and data-driven workflows"
-      ]
+[
+  {
+    "id": "phd-xdu",
+    "degree": "PhD in Computer Science and Technology",
+    "institution": "Xidian University (XDU)",
+    "location": "Xi’an, China",
+    "start_date": "Sep 2025",
+    "end_date": "July 2029",
+    "details": [
+      "Research Topic: Financial Deep Reinforcement Learning (FinDRL) for Stock Trading and Portfolio Management."
+    ],
+    "links": {
+      "institution": "https://en.xidian.edu.cn"
     }
-  ]
-}
+  },
+  {
+    "id": "meng-xdu",
+    "degree": "MEng in Computer Science and Technology",
+    "institution": "Xidian University",
+    "location": "Xi’an, China",
+    "start_date": "Sep 2022",
+    "end_date": "July 2025",
+    "details": [
+      "Overall Grade: 91.84%",
+      "Thesis: Stock Market Price Forecasting Using Deep Reinforcement Learning Techniques (FinDRL Approach)."
+    ],
+    "links": {
+      "institution": "https://en.xidian.edu.cn"
+    }
+  },
+  {
+    "id": "be-ynu",
+    "degree": "BE in Computer Science and Technology",
+    "institution": "Yunnan University",
+    "location": "Kunming, China",
+    "start_date": "Sep 2018",
+    "end_date": "July 2022",
+    "details": [
+      "Overall Grade: 80%",
+      "Thesis: Cross Border E-Commerce Solution (B2B & B2C)."
+    ],
+    "links": {
+      "institution": "http://english.ynu.edu.cn"
+    }
+  }
+]

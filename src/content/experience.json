@@ -1,30 +1,39 @@
-{
-  "experience": [
-    {
-      "id": "software-engineer-autofficina-internazionale",
-      "role": "Software Engineer (Remote)",
-      "organization": "Autofficina Internazionale s.a.s",
-      "type": "industry",
-      "location": "Remote / Italy",
-      "start_date": "2021-05",
-      "end_date": "Present",
-      "description": "Development and maintenance of SaaS platforms supporting automotive service operations, customer management, marketing automation, and telematics-based solutions.",
-      "highlights": [
-        "Built a multi-service SaaS platform including appointment management, marketing system, dynamic page builder, URL shortener, and telematics integration.",
-        "Implemented and documented data optimizations achieving ~33.33% improvement in storage efficiency.",
-        "Developed a Deep Neural Network model covering 14 vehicle problem categories, contributing to ~10% increase in customer satisfaction.",
-        "Improved server query response time by ~15% through microservices architecture, distributed communication services, and CI/CD pipeline optimization."
-      ],
-      "technologies": [
-        "Python",
-        "TypeScript",
-        "Node.js",
-        "Microservices",
-        "CI/CD",
-        "Deep Learning",
-        "Telematics"
-      ],
-      "links": { "company": "https://internazionaleauto.it" }
+[
+  {
+    "id": "autofficina-internazionale",
+    "type": "industry",
+    "role": "Software Engineer",
+    "organization": "Autofficina Internazionale s.a.s",
+    "location": "Remote",
+    "start_date": "May 2021",
+    "end_date": "Present",
+    "description": "SaaS and automation systems for automotive operations.",
+    "highlights": [
+      "SaaS application offering services: Customer appointment management, Marketing system, Dynamic page builder, URL shortener, and Telematics implementation to enhance business operations.",
+      "Documented improvements, highlighting significant reduction in data size and storage. Reported a 33.33% improvement in storage efficiency.",
+      "Successfully increased customer satisfaction by 10% by building a Deep Neural Networks model to provide solutions for 14 vehicle problems via our company's services.",
+      "Improved server query response by 15% through engineering best practices with Microservices architecture, DCS, and CI/CD pipeline."
+    ],
+    "links": {
+      "company": "https://www.internazionaleauto.com"
     }
-  ]
-}
+  },
+  {
+    "id": "breeze-bangladesh",
+    "type": "industry",
+    "role": "IT Team Instructor",
+    "organization": "BreezeBangladesh LTD",
+    "location": "Remote",
+    "start_date": "Jan 2021",
+    "end_date": "Apr 2023",
+    "description": "Technical leadership and support for engineering workflows.",
+    "highlights": [
+      "Offered technical assistance to the IT team beyond established working hours to troubleshoot and resolve customer issues.",
+      "Developed customer trust by evaluating criteria and optimizing customer guidance.",
+      "Improved software development pipelines through CI/CD, increasing the development team's speed by 20%."
+    ],
+    "links": {
+      "company": "#"
+    }
+  }
+]
