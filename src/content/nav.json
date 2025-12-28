@@ -1,5 +1,6 @@
 {
-  "site_title": "Your Name / Site Title",
+  "logo_url": "/logo.png",
+  "site_title": "As Md Habibullah",
   "items": [
     { "label": "Publications", "href": "/publications", "enabled": true },
     { "label": "Projects", "href": "/projects", "enabled": true },

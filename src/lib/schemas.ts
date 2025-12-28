@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const NavSchema = z.object({
+  logo_url: z.string(),
   site_title: z.string(),
   items: z.array(
     z.object({
@@ -182,7 +183,6 @@ export const BlogPostsSchema = z.object({
 
 export type BlogPost = z.infer<typeof BlogPostSchema>;
 
-
 export const DetailsSchema = z.array(
   z.object({
     slug: z.string(),
@@ -191,4 +191,3 @@ export const DetailsSchema = z.array(
     links: z.record(z.string().optional()).optional(),
   })
 );
-

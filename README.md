@@ -1,6 +1,6 @@
-Academic Folio — Usage Guide
+# Academic Folio — Usage Guide
 
-This document explains how to customize and maintain the Academic Folio project.
+### This document explains how to customize and maintain the Academic Folio project.
 
 The site is data-driven:
 • No CMS
@@ -8,8 +8,6 @@ The site is data-driven:
 • No MDX
 • All content lives in JSON files
 • UI and theme are handled centrally
-
-⸻
 
 1. Project Structure (What matters)
 
@@ -47,8 +45,6 @@ If you only want to update content, you will edit files in:
 
 src/content/
 ```
-
-⸻
 
 2. Profile (profile.json)
 
@@ -97,8 +93,6 @@ Optional (auto-hidden if missing)
 
 🔹 If a field is missing or empty → it will not render
 
-⸻
-
 3. Home Page Content (home.json)
 
 Controls the main route (/).
@@ -120,8 +114,6 @@ Summary section
 	•	Appears at the top of /
 	•	Keep it concise and academic
 ```
-
-⸻
 
 Stories section
 
@@ -154,8 +146,6 @@ Each story includes:
 🔹 Images are descriptive queries, not URLs
 🔹 Currently rendered using placeholders (safe for static export)
 
-⸻
-
 4. Education (education.json)
 
 ```
@@ -174,8 +164,6 @@ Each story includes:
   }
 ]
 ```
-
-⸻
 
 5. Experience (experience.json)
 
@@ -205,8 +193,6 @@ Valid type values:
 	•	"industry"
 	•	"academic"
 ```
-
-⸻
 
 6. Projects (projects.json)
 
@@ -238,8 +224,6 @@ Valid type values:
 	•	"side"
 ```
 
-⸻
-
 7. Publications (publications.json)
 
 ```
@@ -259,8 +243,6 @@ Valid type values:
 ```
 
 Links are optional.
-
-⸻
 
 8. Theme & Colors
 
@@ -291,8 +273,6 @@ html.dark {
 
 ```
 
-⸻
-
 9. Deployment (GitHub Pages)
 
 ```
@@ -317,5 +297,3 @@ Workflow
 .github/workflows/pages.yml
 (Already provided and configured for Yarn 4)
 ```
-
-⸻
