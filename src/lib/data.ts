@@ -10,6 +10,7 @@ import {
   BlogPostsSchema,
   ExperienceSchema,
   PublicationsSchema,
+  DetailsSchema,
 } from "./schemas";
 
 /** Read JSON relative to /src */
@@ -71,12 +72,20 @@ export function getPublications() {
 
 export function getBlogPosts(): BlogPost[] {
   return BlogPostsSchema.parse(readJSON("content/blogposts.json"))
-    .posts.filter((p) => !p.draft)
+    .posts.filter((p: any) => !p.draft)
     .slice()
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
 }
 
 export function getBlogPostBySlug(slug: string): BlogPost | null {
   const posts = BlogPostsSchema.parse(readJSON("content/blogposts.json")).posts;
-  return posts.find((p) => p.slug === slug && !p.draft) ?? null;
+  return posts.find((p: any) => p.slug === slug && !p.draft) ?? null;
+}
+
+export function getDetails() {
+  return DetailsSchema.parse(readJSON("content/details.json"));
+}
+
+export function getDetailBySlug(slug: string) {
+  return getDetails().find((d: any) => d.slug === slug) ?? null;
 }

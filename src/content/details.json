@@ -1,0 +1,15 @@
+[
+    {
+        "slug": "neurasynk",
+        "title": "Neurasynk – Adaptive Brain Network Neurofeedback via DRL",
+        "summary": [
+            "Real-time closed-loop neurofeedback system leveraging deep reinforcement learning.",
+            "EEG connectivity features + adaptive feedback for personalized cognitive modulation."
+        ],
+        "links": {
+            "paper": "",
+            "code": "",
+            "explain": ""
+        }
+    }
+]

@@ -181,3 +181,14 @@ export const BlogPostsSchema = z.object({
 });
 
 export type BlogPost = z.infer<typeof BlogPostSchema>;
+
+
+export const DetailsSchema = z.array(
+  z.object({
+    slug: z.string(),
+    title: z.string(),
+    summary: z.array(z.string()).optional(),
+    links: z.record(z.string().optional()).optional(),
+  })
+);
+
