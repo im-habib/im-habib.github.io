@@ -1,9 +1,10 @@
 import { MetadataRoute } from "next";
 import {
-    getBlogPosts,
-    getProjects,
-    getPublications,
+    getBlogPosts, getProjects, getPublications
 } from "@/lib/data";
+
+export const dynamic = "force-static";
+
 
 const SITE_URL = "https://habib.scholariest.com";
 
