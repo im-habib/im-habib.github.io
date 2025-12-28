@@ -26,7 +26,4 @@ content/projects.json \
 content/publications.json \
 content/blogposts.json \
 lib/schemas.ts \
-lib/data.ts \
-next.config.mjs \
-tailwind.config.ts \
-postcss.config.js
+lib/data.ts

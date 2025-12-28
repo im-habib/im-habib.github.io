@@ -9,10 +9,10 @@
     "end_date": "Present",
     "description": "SaaS and automation systems for automotive operations.",
     "highlights": [
-      "SaaS application offering services: Customer appointment management, Marketing system, Dynamic page builder, URL shortener, and Telematics implementation to enhance business operations.",
-      "Documented improvements, highlighting significant reduction in data size and storage. Reported a 33.33% improvement in storage efficiency.",
-      "Successfully increased customer satisfaction by 10% by building a Deep Neural Networks model to provide solutions for 14 vehicle problems via our company's services.",
-      "Improved server query response by 15% through engineering best practices with Microservices architecture, DCS, and CI/CD pipeline."
+      "Developed and maintained a SaaS platform providing customer appointment management, marketing systems, dynamic page building, URL shortening, and telematics integration.",
+      "Documented and implemented optimizations resulting in a 33.33% reduction in data storage usage and improved system efficiency.",
+      "Increased customer satisfaction by approximately 10% by designing and deploying a Deep Neural Network model to diagnose and resolve 14 common vehicle issues.",
+      "Improved server query response time by 15% through microservices architecture, distributed computing strategies, and CI/CD pipeline optimization."
     ],
     "links": {
       "company": "https://www.internazionaleauto.com"
@@ -22,18 +22,131 @@
     "id": "breeze-bangladesh",
     "type": "industry",
     "role": "IT Team Instructor",
-    "organization": "BreezeBangladesh LTD",
+    "organization": "Breeze Bangladesh LTD",
     "location": "Remote",
     "start_date": "Jan 2021",
     "end_date": "Apr 2023",
-    "description": "Technical leadership and support for engineering workflows.",
+    "description": "Technical mentoring and software development support for distributed IT teams.",
     "highlights": [
-      "Offered technical assistance to the IT team beyond established working hours to troubleshoot and resolve customer issues.",
-      "Developed customer trust by evaluating criteria and optimizing customer guidance.",
-      "Improved software development pipelines through CI/CD, increasing the development team's speed by 20%."
+      "Provided advanced technical assistance beyond standard working hours to diagnose and resolve customer and system-level issues.",
+      "Improved customer trust and satisfaction by evaluating service criteria and optimizing technical guidance processes.",
+      "Enhanced software development pipelines through CI/CD practices, increasing overall development velocity by approximately 20%."
     ],
     "links": {
-      "company": "#"
+      "company": "https://github.com/breezebd"
+    }
+  },
+  {
+    "id": "bright-host-it-institute",
+    "type": "industry",
+    "role": "Web Application Developer & SEO Instructor",
+    "organization": "Bright Host IT Institute",
+    "location": "On-site",
+    "start_date": "Jun 2017",
+    "end_date": "Aug 2018",
+    "description": "Web development and SEO training with a focus on performance and search visibility.",
+    "highlights": [
+      "Designed and developed responsive, user-friendly web applications following modern SEO best practices.",
+      "Optimized website performance, load speed, and mobile usability to improve search engine rankings.",
+      "Implemented technical SEO solutions including structured data, XML sitemaps, and crawl optimization.",
+      "Trained teams on keyword research, on-page SEO strategies, and content optimization techniques.",
+      "Used analytics tools to monitor website performance and refine SEO and development strategies.",
+      "Applied secure coding practices to preserve SEO integrity during application development."
+    ],
+    "links": {
+      "company": "https://brighthost-it.com"
+    }
+  },
+  {
+    "id": "impel-service-solutions",
+    "type": "industry",
+    "role": "Call Center Agent",
+    "organization": "Impel Service & Solutions Limited (ISSL)",
+    "location": "On-site",
+    "start_date": "Dec 2016",
+    "end_date": "May 2017",
+    "description": "Customer support and technical issue resolution for major telecommunications providers.",
+    "highlights": [
+      "Provided real-time troubleshooting for GP and Robi customers, resolving complex account and technical issues.",
+      "Translated technical problems into clear, actionable solutions while maintaining high First Call Resolution (FCR) KPIs.",
+      "Handled crisis situations efficiently while maintaining strong communication and service quality standards."
+    ],
+    "links": {
+      "company": "https://issl.com.bd"
+    }
+  },
+  {
+    "id": "square-apparels",
+    "type": "industry",
+    "role": "Assistant Printer",
+    "organization": "Square Apparels Limited",
+    "location": "On-site",
+    "start_date": "Sep 2015",
+    "end_date": "Aug 2016",
+    "description": "Industrial textile printing and quality-controlled manufacturing operations.",
+    "highlights": [
+      "Supported workflow optimization - Worked in the sample printing line, supporting buyer-driven sample development for international clients including SOLIVER and SPRIT.",
+      "Coordinated daily sample updates by reviewing buyer and merchandising requests, arranging fabric requisitions, and aligning with supervisors and executive managers.",
+      "Guided sample-line workers during design updates and ensured accurate execution of sample prints within required timelines."
+    ],
+    "links": {
+      "company": "https://www.squareapparels.com"
+    }
+  },
+  {
+    "id": "ra-xdu-bigdata-lab",
+    "type": "academic",
+    "role": "Research Assistant",
+    "organization": "State Key Laboratory of Big Data and Visual Intelligence, Xidian University (XDU)",
+    "location": "Xi’an, China",
+    "start_date": "Oct 2022",
+    "end_date": "Jul 2025",
+    "description": "Research assistantship focused on Financial Deep Reinforcement Learning and data-driven optimization methods for stock market prediction and portfolio management.",
+    "highlights": [
+      "Conducted research on optimization algorithms, dynamic market prediction, and portfolio management using Financial Deep Reinforcement Learning (FinDRL).",
+      "Developed reinforcement learning models for stock price forecasting under non-stationary market conditions.",
+      "Investigated data-driven decision-making methods combining artificial intelligence and financial time-series analysis.",
+      "Assisted in supervising undergraduate students and supporting related student research projects connected to the laboratory.",
+      "Research Title: Stock Market Price Forecasting Using Deep Reinforcement Learning Techniques (FinDRL Approach).",
+      "Supervised by Prof. Dr. Wang Shuzhen."
+    ],
+    "technologies": [
+      "Python",
+      "Deep Reinforcement Learning",
+      "Financial Time-Series Analysis",
+      "Optimization Algorithms"
+    ],
+    "links": {
+      "institution": "https://en.xidian.edu.cn"
+    }
+  },
+  {
+    "id": "ug-research-ynu",
+    "type": "academic",
+    "role": "Undergraduate Thesis Work",
+    "organization": "Yunnan University (YNU)",
+    "location": "Kunming, China",
+    "start_date": "Feb 2022",
+    "end_date": "Jul 2022",
+    "description": "Undergraduate research project focused on cross-border e-commerce systems and distributed software architecture.",
+    "highlights": [
+      "Thesis Title: B2B & B2C Cross-Border E-Commerce Solution.",
+      "Designed an integrated platform combining supply chain coordination and government logistics services.",
+      "Implemented a microservice-based architecture to support scalable and efficient product delivery workflows.",
+      "Supervised by Prof. Dr. Xiaobing Zhou."
+    ],
+    "technologies": [
+      "Docker",
+      "Kubernetes",
+      "MongoDB",
+      "Redis",
+      "PostgreSQL",
+      "TypeScript",
+      "Python",
+      "Microservice Architecture"
+    ],
+    "links": {
+      "institution": "http://english.ynu.edu.cn"
     }
   }
 ]

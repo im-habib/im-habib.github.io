@@ -1,6 +1,6 @@
+import Tag from "@/components/Tag";
 import Card from "@/components/Card";
 import LinkPill from "@/components/LinkPill";
-import Tag from "@/components/Tag";
 import { getBlogPostBySlug, getBlogPosts } from "@/lib/data";
 
 export function generateStaticParams() {

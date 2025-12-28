@@ -1,7 +1,8 @@
 import { z } from "zod";
 
 export const NavSchema = z.object({
-  logo_url: z.string(),
+  dark_logo_url: z.string(),
+  light_logo_url: z.string(),
   site_title: z.string(),
   items: z.array(
     z.object({
@@ -145,6 +146,46 @@ export const ProjectSchema = z.object({
 });
 
 export const ProjectsSchema = z.array(ProjectSchema);
+
+
+const ProjectDetailSchema = z.object({
+  project_id: z.string(),
+  project_summary: z.object({
+    vision: z.string(),
+    problem_statement: z.string(),
+    solution: z.string(),
+    key_innovation: z.string(),
+  }),
+  detailed_specification: z.object({
+    workflow: z.array(
+      z.object({
+        step: z.number(),
+        phase: z.string(),
+        description: z.string(),
+      })
+    ),
+    drl_framework: z.object({
+      algorithm: z.string(),
+      state_space: z.string(),
+      action_space: z.string(),
+      reward_function: z.string(),
+    }),
+    expected_results: z.object({
+      technical: z.array(z.string()),
+      neural: z.array(z.string()),
+      behavioral: z.array(z.string()),
+    }),
+    technical_stack: z.object({
+      languages: z.array(z.string()),
+      libraries: z.array(z.string()),
+      hardware_integration: z.array(z.string()),
+      feedback_interface: z.array(z.string()),
+    }),
+  }),
+});
+
+export const ProjectDetailsSchema = z.array(ProjectDetailSchema);
+
 
 /** JSON-only blog blocks (safe rendering; no raw HTML) */
 export const BlogBlockSchema = z.discriminatedUnion("type", [

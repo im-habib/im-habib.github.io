@@ -1,10 +1,16 @@
+import { Metadata } from "next";
+
 import Card from "@/components/Card";
+import { getProjects } from "@/lib/data";
 import LinkPill from "@/components/LinkPill";
 import SectionHeader from "@/components/SectionHeader";
-import { getProjects } from "@/lib/data";
 
-export const metadata = { title: "Projects" };
-
+export const metadata: Metadata = {
+  title:
+    "Projects | Software Engineer & DRL Researcher | Accademic Profile - As Md Habibullah",
+  description:
+    "Selected research and industry projects by As Md Habibullah, spanning Deep Reinforcement Learning, neuroadaptive systems, financial modeling, and production-scale SaaS and software engineering.",
+};
 export default function ProjectsPage() {
   const projects = getProjects();
 
@@ -22,8 +28,9 @@ export default function ProjectsPage() {
 
       <div className="space-y-4">
         {projects.map((p) => {
+          // console.log(p);
+
           const typeLabel = (p.type ?? "project").toUpperCase();
-          const thesis = p.links?.["thesis"];
 
           return (
             <Card key={p.id}>
@@ -56,6 +63,14 @@ export default function ProjectsPage() {
               {/* Links */}
               {(p.links && Object.keys(p.links).length > 0) ? (
                 <div className="mt-4 flex flex-wrap gap-2">
+                  {p.links.more ? (
+                    <LinkPill href={p.links.more} label="Read More" />
+                  ) : null}
+
+                  {p.links.web ? (
+                    <LinkPill href={p.links.web} label="Web" />
+                  ) : null}
+
                   {p.links.github ? (
                     <LinkPill href={p.links.github} label="GitHub" />
                   ) : null}
@@ -68,9 +83,10 @@ export default function ProjectsPage() {
                     <LinkPill href={p.links.demo} label="Demo" />
                   ) : null}
 
-                  {thesis ? (
-                    <LinkPill href={thesis} label="Thesis" />
+                  {p.links.thesis ? (
+                    <LinkPill href={p.links.thesis} label="Thesis" />
                   ) : null}
+
                 </div>
               ) : null}
             </Card>

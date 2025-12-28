@@ -1,9 +1,16 @@
+import { Metadata } from "next";
+
 import Card from "@/components/Card";
 import LinkPill from "@/components/LinkPill";
 import SectionHeader from "@/components/SectionHeader";
 import { getPublications } from "@/lib/data";
 
-export const metadata = { title: "Publications" };
+export const metadata: Metadata = {
+  title:
+    "Publications | Software Engineer & DRL Researcher | Accademic Profile - As Md Habibullah",
+  description:
+    "Research publications by As Md Habibullah, focusing on Deep Reinforcement Learning, financial systems, optimization, and data-driven decision-making. Includes peer-reviewed journal articles and applied research contributions.",
+};
 
 export default function PublicationsPage() {
   const publications = getPublications();

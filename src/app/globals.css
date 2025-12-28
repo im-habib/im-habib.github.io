@@ -6,28 +6,30 @@
    Dark is html.dark
    ========================= */
 
-/* LIGHT — AcademicPages-like (very subtle chrome) */
+/* LIGHT — subtle chrome */
 :root {
   /* Base */
   --background: #ffffff;
   --foreground: #0f172a;
 
-  /* Chrome (header/sidebar) — almost white */
+  /* Chrome */
   --surface: #fcfcfd;
   --surface2: #ffffff;
+  --surface-elev: #ffffff;
 
   /* Text */
-  --muted: #475569;
+  --muted: #334155;
   --muted2: #64748b;
 
-  /* Borders — soft */
-  --border: #e5e7eb;
+  /* Borders / shadow */
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
 
   /* Accent */
   --link: #0369a1;
   --link-hover: #075985;
 
-  /* Hover */
+  /* Hover / focus */
   --hover: #f8fafc;
   --ring: #38bdf8;
 
@@ -39,29 +41,44 @@
   --code-fg: #e5e7eb;
 }
 
-/* DARK — clear separation */
+/* DARK — softer, not black, with elevation */
 html.dark {
-  --background: #0b0f19;
-  --foreground: #e5e7eb;
+  /* Base: lighter + less saturated (reading-friendly) */
+  --background: #141a23;
+  /* relaxed slate, not navy */
+  --foreground: #e6e8ee;
+  /* soft white */
 
-  --surface: #111827;
-  --surface2: #0b1220;
+  /* Chrome: clearly lighter than background */
+  --surface: rgba(24, 31, 44, 0.72);
+  /* header/sidebar glass */
+  --surface2: #1a2232;
+  /* cards */
+  --surface-elev: #202b3e;
+  /* elevated blocks */
 
-  --muted: #9ca3af;
-  --muted2: #6b7280;
+  /* Text hierarchy: softer */
+  --muted: #c9d2e3;
+  --muted2: #a7b4cc;
+  /* paragraphs (main reading color) */
 
-  --border: #1f2937;
+  /* Borders: very subtle (don’t outline everything) */
+  --border: rgba(220, 230, 255, 0.10);
 
-  --link: #7dd3fc;
-  --link-hover: #bae6fd;
+  /* Shadows: gentle, not “heavy neon” */
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 
-  --hover: #1e293b;
-  --ring: #38bdf8;
+  /* Accent: calm cyan */
+  --link: #8bd5ff;
+  --link-hover: #c7ecff;
 
-  --selection: rgba(125, 211, 252, 0.25);
+  --hover: rgba(255, 255, 255, 0.05);
+  --ring: rgba(139, 213, 255, 0.75);
 
-  --code-bg: #060a12;
-  --code-fg: #e5e7eb;
+  --selection: rgba(139, 213, 255, 0.22);
+
+  --code-bg: #0f1420;
+  --code-fg: #e6e8ee;
 }
 
 /* =========================
@@ -82,6 +99,7 @@ a {
   color: var(--link);
   text-decoration: none;
 }
+
 a:hover {
   color: var(--link-hover);
   text-decoration: underline;
@@ -97,41 +115,58 @@ hr {
 }
 
 /* Typography */
-h1 {
+h1,
+h2,
+h3 {
   color: var(--foreground);
+}
+
+h1 {
   font-weight: 700;
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
+
 h2 {
-  color: var(--foreground);
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
 }
+
 h3 {
-  color: var(--foreground);
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+
+/* ✅ Key fix: paragraphs should NOT be same as headings */
 p {
-  color: var(--foreground);
+  color: var(--muted2);
   line-height: 1.75rem;
+}
+
+/* Lists inherit paragraph tone */
+li {
+  color: var(--muted2);
 }
 
 /* =========================
    LAYOUT TAGS
    ========================= */
 
+/* Sticky chrome should look LIGHT in both themes */
 header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 aside {
   background: var(--surface);
   border-right: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Lock FontAwesome icon size in sidebar */
@@ -143,14 +178,37 @@ aside .svg-inline--fa {
   flex-shrink: 0;
 }
 
-main {
-  background: var(--background);
+/* Make icon + text align cleanly */
+aside li,
+aside a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Make chrome borders EXTRA subtle in light mode only */
-:root header,
-:root aside {
-  border-color: rgba(0, 0, 0, 0.06);
+/* Sidebar text tone */
+aside p {
+  color: var(--muted2);
+}
+
+aside small,
+aside .muted {
+  color: var(--muted2);
+}
+
+main {
+  background: transparent;
+}
+
+html.dark main {
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.00));
+}
+
+html.dark header,
+html.dark aside {
+  background: rgba(28, 36, 52, 0.78);
 }
 
 /* =========================
@@ -160,9 +218,16 @@ main {
 /* Card uses <article> */
 article {
   background: var(--surface2);
-  /* border: 1px solid var(--border);
-  border-radius: 16px; */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Dark mode: slightly lift cards from background */
+html.dark article {
+  background: linear-gradient(180deg,
+      rgba(17, 24, 39, 0.95),
+      rgba(17, 24, 39, 0.85));
 }
 
 /* Section header underline (your screenshot) */
@@ -178,8 +243,8 @@ button[data-pill="true"] {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  /* border: 1px solid var(--border);
-  border-radius: 9999px; */
+  border: 1px solid var(--border);
+  border-radius: 9999px;
   padding: 0.35rem 0.85rem;
   font-size: 0.875rem;
   background: transparent;
@@ -206,15 +271,12 @@ pre {
   overflow-x: auto;
   color: var(--code-fg);
   background: var(--code-bg);
-  /* border-radius: 12px; */
-  /* border: 1px solid var(--border); */
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
+
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
-}
-
-/* Sidebar small polish */
-aside p {
-  color: var(--muted);
 }

@@ -1,13 +1,42 @@
 {
-  "logo_url": "/logo.png",
+  "dark_logo_url": "/logo-dark.png",
+  "light_logo_url": "/logo-light.png",
   "site_title": "As Md Habibullah",
   "items": [
-    { "label": "Publications", "href": "/publications", "enabled": true },
-    { "label": "Projects", "href": "/projects", "enabled": true },
-    { "label": "Blog Posts", "href": "/blog", "enabled": true },
-    { "label": "CV", "href": "/cv", "enabled": true },
-    { "label": "Talks", "href": "/talks", "enabled": false },
-    { "label": "Teaching", "href": "/teaching", "enabled": false },
-    { "label": "Guide", "href": "/guide", "enabled": false }
+    {
+      "label": "Projects",
+      "href": "/projects",
+      "enabled": true
+    },
+    {
+      "label": "Publications",
+      "href": "/publications",
+      "enabled": true
+    },
+    {
+      "label": "My Story",
+      "href": "/my-story",
+      "enabled": true
+    },
+    {
+      "label": "CV",
+      "href": "/cv",
+      "enabled": true
+    },
+    {
+      "label": "Talks",
+      "href": "/talks",
+      "enabled": false
+    },
+    {
+      "label": "Teaching",
+      "href": "/teaching",
+      "enabled": false
+    },
+    {
+      "label": "Guide",
+      "href": "/guide",
+      "enabled": false
+    }
   ]
 }

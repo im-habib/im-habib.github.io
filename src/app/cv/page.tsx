@@ -1,19 +1,25 @@
+import { Metadata } from "next";
 import Card from "@/components/Card";
 import LinkPill from "@/components/LinkPill";
 import SectionHeader from "@/components/SectionHeader";
 import { getProfile, getProjects, getEducation, getExperience } from "@/lib/data";
 
-export const metadata = { title: "CV" };
+export const metadata: Metadata = {
+  title:
+    "Curriculum Vitae | Software Engineer & DRL Researcher | Academic Profile – As Md Habibullah",
+  description:
+    "Academic Curriculum Vitae of As Md Habibullah, Software Engineer and PhD researcher specializing in Deep Reinforcement Learning, financial systems, and production-scale SaaS engineering. Includes education, research experience, publications, and industry projects.",
+};
 
 export default function CVPage() {
   const profile = getProfile();
   const education = getEducation();
   const experience = getExperience();
-  const projects = getProjects();
+  // const projects = getProjects();
 
   const jobExp = experience.filter((e) => e.type === "industry");
   const researchExp = experience.filter((e) => e.type === "academic");
-  const researchProjects = projects.filter((p) => p.type === "research");
+  // const researchProjects = projects.filter((p) => p.type === "research");
 
   const aff = profile.affiliation;
 
@@ -45,40 +51,6 @@ export default function CVPage() {
         </div>
       </Card>
 
-      {/* Education */}
-      {education.length ? (
-        <>
-          <SectionHeader title="Education" />
-          <div className="space-y-4">
-            {education.map((ed) => (
-              <Card key={ed.id}>
-                <div className="text-lg font-semibold">{ed.degree}</div>
-
-                <div className="mt-1 text-sm muted">
-                  {ed.institution}
-                  {ed.location ? ` · ${ed.location}` : ""}
-                  {" · "}
-                  {ed.start_date} – {ed.end_date}
-                </div>
-
-                {ed.details?.length ? (
-                  <ul className="mt-3 list-disc space-y-1 pl-6">
-                    {ed.details.map((d) => (
-                      <li key={d}>{d}</li>
-                    ))}
-                  </ul>
-                ) : null}
-
-                {ed.links?.institution ? (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <LinkPill href={ed.links.institution} label="Institution" />
-                  </div>
-                ) : null}
-              </Card>
-            ))}
-          </div>
-        </>
-      ) : null}
 
       {/* Job Experience */}
       {jobExp.length ? (
@@ -115,8 +87,44 @@ export default function CVPage() {
         </>
       ) : null}
 
+
+      {/* Education */}
+      {education.length ? (
+        <>
+          <SectionHeader title="Education" />
+          <div className="space-y-4">
+            {education.map((ed) => (
+              <Card key={ed.id}>
+                <div className="text-lg font-semibold">{ed.degree}</div>
+
+                <div className="mt-1 text-sm muted">
+                  {ed.institution}
+                  {ed.location ? ` · ${ed.location}` : ""}
+                  {" · "}
+                  {ed.start_date} – {ed.end_date}
+                </div>
+
+                {ed.details?.length ? (
+                  <ul className="mt-3 list-disc space-y-1 pl-6">
+                    {ed.details.map((d) => (
+                      <li key={d}>{d}</li>
+                    ))}
+                  </ul>
+                ) : null}
+
+                {ed.links?.institution ? (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <LinkPill href={ed.links.institution} label="Institution" />
+                  </div>
+                ) : null}
+              </Card>
+            ))}
+          </div>
+        </>
+      ) : null}
+
       {/* Project Experience */}
-      {projects.length ? (
+      {/* {projects.length ? (
         <>
           <SectionHeader title="Project Experience" />
           <div className="space-y-4">
@@ -154,10 +162,10 @@ export default function CVPage() {
             })}
           </div>
         </>
-      ) : null}
+      ) : null} */}
 
       {/* Research Experience */}
-      {researchExp.length || researchProjects.length ? (
+      {researchExp.length ? (
         <>
           <SectionHeader title="Research Experience" />
 
@@ -189,23 +197,6 @@ export default function CVPage() {
               </Card>
             ))}
 
-            {researchProjects.map((p) => (
-              <Card key={`rp-${p.id}`}>
-                <div className="text-lg font-semibold">{p.title}</div>
-
-                <div className="mt-1 text-sm muted">
-                  Research Project
-                  {p.period ? ` · ${p.period.start} – ${p.period.end}` : ""}
-                </div>
-
-                <p className="mt-3">{p.summary}</p>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {p.links?.paper ? <LinkPill href={p.links.paper} label="Paper" /> : null}
-                  {p.links?.github ? <LinkPill href={p.links.github} label="GitHub" /> : null}
-                </div>
-              </Card>
-            ))}
           </div>
         </>
       ) : null}

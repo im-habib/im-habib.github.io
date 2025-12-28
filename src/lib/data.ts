@@ -4,13 +4,14 @@ import {
   BlogPost,
   NavSchema,
   HomeSchema,
+  DetailsSchema,
   ProfileSchema,
   ProjectsSchema,
   EducationSchema,
   BlogPostsSchema,
   ExperienceSchema,
   PublicationsSchema,
-  DetailsSchema,
+  ProjectDetailsSchema,
 } from "./schemas";
 
 /** Read JSON relative to /src */
@@ -58,6 +59,14 @@ export function getExperience() {
 
 export function getProjects() {
   return ProjectsSchema.parse(readJSON("content/projects.json"));
+}
+
+export function getProjectDetails() {
+  return ProjectDetailsSchema.parse(readJSON("content/details.json"));
+}
+
+export function getProjectDetailById(id: string) {
+  return getProjectDetails().find((p) => p.project_id === id) ?? null;
 }
 
 /* ---------------- Publications (ARRAY) ---------------- */

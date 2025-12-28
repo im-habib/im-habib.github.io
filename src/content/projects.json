@@ -1,22 +1,39 @@
 [
   {
+    "id": "crm-task-automation",
+    "type": "engineering",
+    "title": "Customer Relation Management (CRM) & Task Automation System",
+    "summary": "CRM and task automation system associated with Autofficina Internazionale s.a.s.",
+    "status": "ongoing",
+    "period": {
+      "start": "May 2021",
+      "end": "Present"
+    },
+    "impact": [
+      "Customer appointment + marketing + automation tooling"
+    ],
+    "links": {
+      "web": "https://www.services.internazionaleauto.com"
+    }
+  },
+  {
     "id": "neurasynk",
     "type": "research",
     "title": "Neurasynk – Adaptive Brain Network Neurofeedback via Deep Reinforcement Learning in a Dynamic Closed-Loop Protocol",
-    "summary": "A real-time, closed-loop neurofeedback system leveraging DRL to dynamically modulate brain networks by synchronizing EEG-based connectivity features with adaptive feedback strategies.",
+    "summary": "A real-time, closed-loop neurofeedback system leveraging Deep Reinforcement Learning (DRL) to dynamically modulate functional brain connectivity. The framework synchronizes high-dimensional EEG-based network features with evolving feedback strategies to optimize neural plasticity and cognitive performance.",
     "status": "ongoing",
     "period": {
       "start": "2025",
       "end": "Present"
     },
     "impact": [
-      "Closed-loop adaptive neurofeedback using DRL",
-      "Personalized cognitive modulation via real-time feedback"
+      "Development of a self-optimizing DRL agent for personalized neural connectivity modulation.",
+      "Transitioning from localized neurofeedback to holistic, network-level brain interventions.",
+      "Establishment of a dynamic protocol that adapts in real-time to the user's instantaneous brain state."
     ],
     "links": {
-      "paper": "/",
-      "code": "/",
-      "demo": "/details/neurasynk"
+      "more": "/projects/neurasynk",
+      "github": "https://github.com/im-habib/DRL-ABNN"
     }
   },
   {
@@ -34,9 +51,8 @@
       "Rigorous evaluation protocol for trading strategies"
     ],
     "links": {
-      "paper": "/details/tipo",
       "code": "/",
-      "demo": "/details/tipo"
+      "demo": "#"
     }
   },
   {
@@ -55,7 +71,7 @@
     ],
     "links": {
       "paper": "#",
-      "github": "https://github.com/asmdhabibullah/SIOPA-Stock-Indicator-Optimization-and-Predictive-Analysis",
+      "github": "https://github.com/im-habib/SIOPA-Stock-Indicator-Optimization-and-Predictive-Analysis",
       "demo": "#"
     }
   },
@@ -75,7 +91,7 @@
     ],
     "links": {
       "paper": "#",
-      "github": "https://github.com/DeepAlphaQuant/FinDRL"
+      "github": "https://github.com/im-habib/FinDRL"
     }
   },
   {
@@ -111,22 +127,9 @@
     "impact": [
       "Built an end-to-end e-commerce workflow across regions"
     ],
-    "links": {}
-  },
-  {
-    "id": "crm-task-automation",
-    "type": "engineering",
-    "title": "Customer Relation Management (CRM) & Task Automation System",
-    "summary": "CRM and task automation system associated with Autofficina Internazionale s.a.s.",
-    "status": "ongoing",
-    "period": {
-      "start": "May 2021",
-      "end": "Present"
-    },
-    "impact": [
-      "Customer appointment + marketing + automation tooling"
-    ],
-    "links": {}
+    "links": {
+      "github": "https://github.com/im-habib/b2b-b2c-cross-border"
+    }
   },
   {
     "id": "smart-charging-station",
@@ -141,6 +144,8 @@
     "impact": [
       "Integrated embedded + cloud + web stack for IoT charging"
     ],
-    "links": {}
+    "links": {
+      "github": "https://github.com/im-habib/smartchargingstation"
+    }
   }
 ]

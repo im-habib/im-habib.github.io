@@ -2,9 +2,11 @@ import "@/app/globals.css";
 
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
+import { ContentProvider } from "@/context/ContentProvider";
 
 import Shell from "@/components/Shell";
 import ThemeProvider from "@/components/ThemeProvider";
+import { getBlogPosts, getEducation, getExperience, getHome, getNav, getProfile, getProjectDetails, getProjects, getPublications } from "@/lib/data";
 
 // 1. Optimize Fonts (Prevents Layout Shift)
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -47,12 +49,29 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  const content = {
+    nav: getNav(),
+    profile: getProfile(),
+    home: getHome(),
+    education: getEducation(),
+    experience: getExperience(),
+    projects: getProjects(),
+    publications: getPublications(),
+    blogposts: getBlogPosts(),
+    details: getProjectDetails(),
+  };
+
+  // console.log("content: ", content);
+
   return (
     // suppressHydrationWarning is necessary for next-themes
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="antialiased font-sans">
         <ThemeProvider>
-          <Shell>{children}</Shell>
+          <ContentProvider value={content}>
+            <Shell>{children}</Shell>
+          </ContentProvider>
         </ThemeProvider>
       </body>
     </html>

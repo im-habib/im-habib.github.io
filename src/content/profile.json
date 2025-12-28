@@ -4,13 +4,13 @@
   "name": {
     "full": "As Md Habibullah",
     "sidebar": "As Md Habibullah",
-    "title": "Software Software Engineer | Optimization & Deep Reinforcement Learning Researchers"
+    "title": "Software Engineer & PhD Student"
   },
-  "bio_short": "PhD researcher in Computer Science and Technology focused on Deep Reinforcement Learning (DRL) for financial systems; Senior Software Engineer building production SaaS.",
-  "bio": "I am pursuing a Doctor of Philosophy (PhD) in Computer Science and Technology at Xidian University (XDU), specializing in Deep Reinforcement Learning (DRL) for Financial Systems. My research focuses on integrating DRL in financial modeling and real-time market adaptation.\n\nAs well as, I'm demonstrating leadership at Autofficina Internazionale s.a.s (InternazionaleAuto), contributing to vehicle automation system development and project management. With over five years of professional experience as a Senior Software Engineer and a strong academic background in Machine Learning (ML), Deep Learning (DL), and DRL, I am also exploring research in the FinTech field. My current project, Financial Deep Reinforcement Learning (FinDRL), is funded by the National Key Laboratory “Institute of Big Data and Visual Intelligence.”",
+  "bio_short": "Researcher in Biomedical Engineering at Xi’an Jiaotong University (XJTU), working on Deep Reinforcement Learning for adaptive neurofeedback and optimization; Software Engineer building production SaaS systems.",
+  "bio": "I am a doctoral researcher in Biomedical Engineering at Xi’an Jiaotong University (XJTU), where my research focuses on Deep Reinforcement Learning (DRL) for adaptive neurofeedback and optimization in brain–computer interface (BCI) systems. My work investigates how learning agents can operate robustly in non-stationary, noisy, and partially observable neural environments using EEG-based feedback.\n\nIn parallel, I collaborate with Xidian University (XDU) on my previous research line in Financial Deep Reinforcement Learning, working with my former supervisor on reinforcement learning–based stock trading and portfolio optimization under non-stationary market conditions.\n\nAlongside academic research, I work as a Software Engineer at Autofficina Internazionale s.a.s, where I design and maintain production-grade SaaS systems. My work spans customer appointment management, marketing automation, dynamic content generation, URL shorteners, and vehicle telematics—driven by performance, reliability, and measurable business impact.",
   "affiliation": {
-    "institution": "Xidian University (XDU)",
-    "department": "Computer Science and Technology",
+    "institution": "Xi’an Jiaotong University (XJTU)",
+    "department": "PhD Student in Biomedical Engineering",
     "location": "Xi’an, China"
   },
   "contact": {
@@ -27,7 +27,10 @@
   },
   "research_interests": [
     "Optimization",
-    "Machine Learning / Deep Learning",
-    "Deep Reinforcement Learning (DRL)"
+    "EEG Signal Modeling",
+    "Adaptive Neurofeedback",
+    "Brain Network Analysis",
+    "Deep Reinforcement Learning (DRL)",
+    "Financial Deep Reinforcement Learning (FinDRL)"
   ]
 }

@@ -1,12 +1,17 @@
+import { getNav } from "@/lib/data";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
+
 
 const HEADER_H = 52;
 
 export default function Shell({ children }: { children: React.ReactNode }) {
+  const nav = getNav();
+
+
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header nav={nav} />
 
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-[300px_1fr]">

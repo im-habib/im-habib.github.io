@@ -6,24 +6,34 @@
       "slug": "why-transformers-overfit-finance",
       "date": "2025-01-05",
       "summary": "A practical explanation of why big models fail on noisy markets.",
-      "tags": ["transformers", "finance", "overfitting"],
+      "tags": [
+        "transformers",
+        "finance",
+        "overfitting"
+      ],
       "draft": false,
       "links": {
         "github": "https://github.com/yourusername/fin-transformer-study"
       },
       "content": [
-        { "type": "h2", "text": "The core problem" },
+        {
+          "type": "h2",
+          "text": "The core problem"
+        },
         {
           "type": "p",
           "text": "Financial time series are non-stationary and have low signal-to-noise. Large models often memorize regimes instead of learning robust structure."
         },
-        { "type": "h2", "text": "What actually helps" },
+        {
+          "type": "h2",
+          "text": "What actually helps"
+        },
         {
           "type": "ul",
           "items": [
             "Walk-forward validation",
-            "Stability metrics across regimes",
             "Ablations and leak checks",
+            "Stability metrics across regimes",
             "Regularization and early stopping"
           ]
         },

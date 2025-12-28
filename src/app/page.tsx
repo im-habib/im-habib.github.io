@@ -1,10 +1,17 @@
 import Image from "next/image";
-import Card from "@/components/Card";
-import SectionHeader from "@/components/SectionHeader";
-import LinkPill from "@/components/LinkPill";
-import { getHome, getProfile } from "@/lib/data";
+import { Metadata } from "next";
 
-export const metadata = { title: "Home" };
+import { getHome } from "@/lib/data";
+import Card from "@/components/Card";
+import LinkPill from "@/components/LinkPill";
+import SectionHeader from "@/components/SectionHeader";
+
+export const metadata: Metadata = {
+  title: "Software Engineer & DRL Researcher | Accademic Profile - As Md Habibullah",
+  description:
+    "Software Engineer and PhD researcher specializing in Deep Reinforcement Learning, financial systems, and production SaaS engineering.",
+};
+
 
 function StoryImages({ images, title }: { images?: string[]; title: string }) {
   if (!images?.length) return null;
@@ -29,18 +36,18 @@ function StoryImages({ images, title }: { images?: string[]; title: string }) {
 }
 
 export default function Home() {
-  const profile = getProfile();
   const home = getHome();
 
+  // const { home } = useContent();
   return (
     <div className="space-y-10">
       {/* ===== Summary ===== */}
       <section className="max-w-2xl">
-        <h1 className="text-3xl font-semibold">{profile.name.full}</h1>
+        {/* <h1 className="text-3xl font-semibold">{profile.name.full}</h1> */}
 
-        {profile.name.title ? (
+        {/* {profile.name.title ? (
           <p className="mt-2 muted">{profile.name.title}</p>
-        ) : null}
+        ) : null} */}
 
         <h2 className="mt-6 text-xl font-semibold">{home.summary.headline}</h2>
 

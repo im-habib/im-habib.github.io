@@ -1,5 +1,5 @@
-import Card from "@/components/Card";
 import Tag from "@/components/Tag";
+import Card from "@/components/Card";
 import { getBlogPosts } from "@/lib/data";
 
 export const metadata = { title: "Blog" };
