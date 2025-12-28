@@ -1,5 +1,6 @@
 import { getNav } from "@/lib/data";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
 
 
@@ -7,7 +8,6 @@ const HEADER_H = 52;
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const nav = getNav();
-
 
   return (
     <div className="min-h-screen">
@@ -39,6 +39,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           </main>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
