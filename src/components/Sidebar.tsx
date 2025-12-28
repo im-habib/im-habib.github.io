@@ -26,8 +26,8 @@ export default function Sidebar() {
           {profile.name.sidebar || profile.name.full}
         </div>
 
-        {profile.bio_short && (
-          <p className="mt-2 text-sm leading-relaxed">{profile.bio_short}</p>
+        {profile.name && (
+          <p className="mt-2 text-sm leading-relaxed">{profile.name.title}</p>
         )}
       </div>
 

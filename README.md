@@ -3,16 +3,17 @@ Academic Folio — Usage Guide
 This document explains how to customize and maintain the Academic Folio project.
 
 The site is data-driven:
-	•	No CMS
-	•	No database
-	•	No MDX
-	•	All content lives in JSON files
-	•	UI and theme are handled centrally
+• No CMS
+• No database
+• No MDX
+• All content lives in JSON files
+• UI and theme are handled centrally
 
 ⸻
 
 1. Project Structure (What matters)
 
+```
 src/
 ├── app/
 │   ├── page.tsx              # Home (summary + stories)
@@ -45,12 +46,13 @@ src/
 If you only want to update content, you will edit files in:
 
 src/content/
-
+```
 
 ⸻
 
 2. Profile (profile.json)
 
+```
 This file controls:
 	•	Name
 	•	Title
@@ -91,6 +93,7 @@ Optional (auto-hidden if missing)
     "pdf": "/cv.pdf"
   }
 }
+```
 
 🔹 If a field is missing or empty → it will not render
 
@@ -102,6 +105,7 @@ Controls the main route (/).
 
 Summary section
 
+```
 {
   "summary": {
     "headline": "Short academic headline",
@@ -115,11 +119,13 @@ Summary section
 
 	•	Appears at the top of /
 	•	Keep it concise and academic
+```
 
 ⸻
 
 Stories section
 
+```
 Each story includes:
 	•	Title
 	•	Multiple paragraphs
@@ -143,6 +149,7 @@ Each story includes:
     }
   ]
 }
+```
 
 🔹 Images are descriptive queries, not URLs
 🔹 Currently rendered using placeholders (safe for static export)
@@ -151,6 +158,7 @@ Each story includes:
 
 4. Education (education.json)
 
+```
 [
   {
     "id": "phd",
@@ -165,7 +173,7 @@ Each story includes:
     ]
   }
 ]
-
+```
 
 ⸻
 
@@ -173,6 +181,7 @@ Each story includes:
 
 Supports industry and academic experience.
 
+```
 [
   {
     "id": "job-1",
@@ -195,11 +204,13 @@ Supports industry and academic experience.
 Valid type values:
 	•	"industry"
 	•	"academic"
+```
 
 ⸻
 
 6. Projects (projects.json)
 
+```
 [
   {
     "id": "project-1",
@@ -225,11 +236,13 @@ Valid type values:
 	•	"research"
 	•	"engineering"
 	•	"side"
+```
 
 ⸻
 
 7. Publications (publications.json)
 
+```
 [
   {
     "id": "paper-1",
@@ -243,6 +256,7 @@ Valid type values:
     }
   }
 ]
+```
 
 Links are optional.
 
@@ -250,6 +264,7 @@ Links are optional.
 
 8. Theme & Colors
 
+```
 Themes are handled via CSS variables only.
 	•	Light / Dark mode supported
 	•	No inline colors in components
@@ -274,11 +289,13 @@ html.dark {
   ...
 }
 
+```
 
 ⸻
 
 9. Deployment (GitHub Pages)
 
+```
 This project uses:
 	•	Static export
 	•	GitHub Actions
@@ -299,27 +316,6 @@ Workflow
 
 .github/workflows/pages.yml
 (Already provided and configured for Yarn 4)
+```
 
 ⸻
-
-10. What NOT to do
-
-❌ Don’t add API routes
-❌ Don’t use getServerSideProps
-❌ Don’t use dynamic runtime data
-❌ Don’t hardcode content in JSX
-❌ Don’t use inline styles for colors
-
-This is a static academic site, by design.
-
-⸻
-
-11. Recommended Workflow
-	1.	Edit JSON in src/content/
-	2.	Run locally:
-
-yarn dev
-
-
-	3.	Commit & push to main
-	4.	GitHub Actions deploys automatically
