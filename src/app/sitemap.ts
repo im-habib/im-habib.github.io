@@ -5,7 +5,7 @@ import {
     getPublications,
 } from "@/lib/data";
 
-const SITE_URL = "https://im-habib.github.io";
+const SITE_URL = "https://habib.scholariest.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes: MetadataRoute.Sitemap = [
@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const publicationRoutes: MetadataRoute.Sitemap =
         getPublications().map((p) => ({
             url: `${SITE_URL}/publications#${p.id}`,
-            lastModified: new Date(p.year, 0, 1),
+            lastModified: p.year ? new Date(p.year, 0, 1) : new Date(),
         }));
 
     return [
