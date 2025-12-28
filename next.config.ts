@@ -4,8 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
   reactCompiler: true,
-  images: { unoptimized: true },
-  basePath: "https://habib.scholariest.com"
+  images: { unoptimized: true }
 };
 
 export default nextConfig;
