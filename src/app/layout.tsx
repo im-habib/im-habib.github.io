@@ -1,12 +1,26 @@
 import "@/app/globals.css";
 
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { ContentProvider } from "@/context/ContentProvider";
 
 import Shell from "@/components/Shell";
 import ThemeProvider from "@/components/ThemeProvider";
-import { getBlogPosts, getEducation, getExperience, getHome, getNav, getProfile, getProjectDetails, getProjects, getPublications } from "@/lib/data";
+import {
+  getBlogPosts,
+  getEducation,
+  getExperience,
+  getHome,
+  getNav,
+  getProfile,
+  getProjectDetails,
+  getProjects,
+  getPublications,
+} from "@/lib/data";
+import { CF_SITE_KEY, CF_SECRET_KEY } from "@/config";
+import { verifyTurnstileToken } from "@/lib/verifyTurnstile";
+import TurnstileGate from "@/components/TurnstileGate";
 
 // 1. Optimize Fonts (Prevents Layout Shift)
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -49,7 +63,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   const content = {
     nav: getNav(),
     profile: getProfile(),
@@ -64,10 +77,23 @@ export default function RootLayout({
 
   // console.log("content: ", content);
 
+  // const {} = aw÷ait verifyTurnstileToken(CF_SITE_KEY, CF_SECRET_KEY);
+
   return (
     // suppressHydrationWarning is necessary for next-themes
     <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://challenges.cloudflare.com" />
+      </head>
       <body className="antialiased font-sans">
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          async
+          defer
+        />
+
+        <TurnstileGate />
+
         <ThemeProvider>
           <ContentProvider value={content}>
             <Shell>{children}</Shell>
