@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/SectionHeader";
 import { TypeEntryDataCard } from "@/components/TypEntryData";
+import { getContent } from "@/lib/data";
 import { constructMetadata, SITE_URL } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -29,6 +30,19 @@ export async function generateMetadata({
     path: `${SITE_URL}/${type}`,
   });
 }
+
+export async function generateStaticParams() {
+  const { data } = await getContent();
+
+  // Get unique types (story, project, etc.)
+  const types = [...new Set(data.map((item) => item.type))];
+
+  return types.map((type) => ({
+    type: type,
+  }));
+}
+
+export const dynamicParams = false;
 
 export default async function TypeOfData({
   params,
