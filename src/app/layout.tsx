@@ -1,14 +1,12 @@
 import "@/app/globals.css";
 
-import Script from "next/script";
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 
 import Shell from "@/components/Shell";
-// import TurnstileGate from "@/components/TurnstileGate";
+import { getContent } from "@/lib/data";
 import ThemeProvider from "@/components/ThemeProvider";
 import { ContentProvider } from "@/context/ContentProvider";
-import { getNav, getProfile, getEntries } from "@/lib/data";
 
 // 1. Optimize Fonts (Prevents Layout Shift)
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -31,7 +29,7 @@ export const metadata: Metadata = {
   },
   description:
     "PhD researcher in Computer Science and Technology focused on Deep Reinforcement Learning (DRL) for financial systems; Senior Software Engineer building production SaaS.",
-  metadataBase: new URL("https://habib.scholariest.com"),
+  metadataBase: new URL("https://qrl.habib.scholariest.com"),
   icons: {
     icon: "/favicon.ico",
     apple: "/icons/apple-touch-icon.png",
@@ -40,39 +38,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://habib.scholariest.com",
-    siteName: "Academic Portfolio",
+    url: "https://qrl.habib.scholariest.com",
+    siteName: "Academic Porfile - As Md Habibullah",
     images: [{ url: "/avatar.jpg", width: 1200, height: 630 }],
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const content = {
-    nav: getNav(),
-    data: getEntries(),
-    profile: getProfile(),
-  };
-
-  console.log("content: ", content);
+  const content = await getContent();
 
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://challenges.cloudflare.com" />
-      </head>
       <body className="antialiased font-sans">
-        <Script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-          async
-          defer
-        />
-
-        {/* <TurnstileGate /> */}
-
         <ThemeProvider>
           <ContentProvider value={content}>
             <Shell>{children}</Shell>
@@ -81,4 +62,28 @@ export default function RootLayout({
       </body>
     </html>
   );
+}
+
+// const content = {
+//   nav: getNav(),
+//   data: getEntries(),
+//   profile: getProfile(),
+// };
+// console.log("content: ", content);
+
+{
+  /* <head>
+        <link rel="preconnect" href="https://challenges.cloudflare.com" />
+      </head> */
+}
+{
+  /* <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          async
+          defer
+        /> */
+}
+
+{
+  /* <TurnstileGate /> */
 }

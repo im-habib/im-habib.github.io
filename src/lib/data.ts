@@ -1,5 +1,3 @@
-import "server-only";
-
 import fs from "fs";
 import path from "path";
 import { z } from "zod";
@@ -47,12 +45,33 @@ export function getEntries(): Entries {
   return EntriesSchema.parse(_entries);
 }
 
+type Content = {
+  data: Entries;
+  nav: z.infer<typeof NavSchema>;
+  profile: z.infer<typeof ProfileSchema>;
+};
+
+/** Fetch all content (nav, data, profile) */
+
+export async function getContent(): Promise<Content> {
+  return {
+    nav: getNav(),
+    data: getEntries(),
+    profile: getProfile(),
+  };
+}
+
 /* =========================
    ENTRY HELPERS (filtering)
    ========================= */
 
 export function getEntriesByType(type: string): Entry[] {
-  return getEntries().filter((e) => e.type === type);
+  return getEntries().filter((e) => {
+    if (e.type === type) {
+      return true;
+    }
+    return false;
+  });
 }
 
 export function getEntryById(id: string): Entry | null {

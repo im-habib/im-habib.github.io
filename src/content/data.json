@@ -1,19 +1,19 @@
 [
   {
-    "id": "phd-xjtu",
+    "id": "phd-xdu",
     "type": "education",
-    "title": "PhD in Biomedical Engineering",
+    "title": "PhD in Computer Science and Technology",
     "body": [
-      "Research Focus: Deep Reinforcement Learning (DRL) for adaptive neurofeedback and optimization in brain–computer interface (BCI) systems.",
-      "Research areas include EEG-based neurofeedback, brain network modeling, and real-time closed-loop learning systems."
+      "I am a Doctoral Researcher at Xidian University (XDU): Specializing in Deep Reinforcement Learning (DRL) for adaptive systems, focusing on agent robustness in non-stationary and noisy environments.",
+      "FinDRL Research Lead: Developing multi-agent frameworks for stock trading and portfolio optimization under dynamic market conditions."
     ],
-    "institution": "Xi’an Jiaotong University (XJTU)",
+    "institution": "Xidian University (XDU)",
     "location": "Xi’an, China",
     "start_date": "Sep 2025",
     "end_date": "Present",
-    "degree": "PhD in Biomedical Engineering",
+    "degree": "PhD in Computer Science and Technology",
     "links": {
-      "institution": "https://en.xjtu.edu.cn"
+      "institution": "https://en.xidian.edu.cn"
     }
   },
   {
@@ -60,7 +60,6 @@
     "body": [
       "CRM and task automation system associated with Autofficina Internazionale s.a.s."
     ],
-    "href": "/projects/crm-task-automation",
     "links": {
       "web": "https://www.services.internazionaleauto.com"
     },
@@ -85,7 +84,7 @@
       "A real-time, closed-loop neurofeedback system leveraging Deep Reinforcement Learning (DRL).",
       "Dynamically modulates functional brain connectivity using EEG-based network features."
     ],
-    "href": "/projects/neurasynk",
+    "href": "/research/neurasynk",
     "links": {
       "github": "https://github.com/im-habib/DRL-ABNN"
     },
@@ -110,7 +109,7 @@
       "A framework for automating technical indicator parameter optimization.",
       "Designed for robust evaluation under changing market regimes."
     ],
-    "href": "/projects/tipo-dynamic",
+    "href": "/research/tipo-dynamic",
     "links": {
       "code": "/",
       "demo": "#"
@@ -135,7 +134,7 @@
       "A deep neural network framework for classifying stock indicator parameters.",
       "Uses Sharpe ratio and drawdown-based backtesting metrics."
     ],
-    "href": "/projects/siopa",
+    "href": "/research/siopa",
     "links": {
       "github": "https://github.com/im-habib/SIOPA-Stock-Indicator-Optimization-and-Predictive-Analysis",
       "paper": "#"
@@ -160,7 +159,7 @@
       "A reinforcement learning framework for adaptive portfolio decision-making.",
       "Focuses on risk-aware trading in dynamic financial environments."
     ],
-    "href": "/projects/findrl",
+    "href": "/research/findrl",
     "links": {
       "github": "https://github.com/im-habib/FinDRL",
       "paper": "#"
@@ -185,7 +184,7 @@
       "Cross-border e-commerce solution developed at Yunnan University.",
       "Integrates logistics, payments, and regional workflows."
     ],
-    "href": "/projects/cross-border-ecommerce",
+    "href": "/research/cross-border-ecommerce",
     "links": {
       "github": "https://github.com/im-habib/b2b-b2c-cross-border"
     },
@@ -205,7 +204,7 @@
     "body": [
       "Smart charging station integrating embedded systems and cloud services."
     ],
-    "href": "/projects/smart-charging-station",
+    "href": "/research/smart-charging-station",
     "links": {
       "github": "https://github.com/im-habib/smartchargingstation"
     },

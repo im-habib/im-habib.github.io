@@ -1,44 +1,26 @@
 import { MetadataRoute } from "next";
-import {
-    getBlogPosts, getProjects, getPublications
-} from "@/lib/data";
+import { getEntries } from "@/lib/data";
 
 export const dynamic = "force-static";
 
-
-const SITE_URL = "https://habib.scholariest.com";
+const SITE_URL = "https://qrl.habib.scholariest.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const staticRoutes: MetadataRoute.Sitemap = [
-        { url: `${SITE_URL}/`, lastModified: new Date() },
-        { url: `${SITE_URL}/cv`, lastModified: new Date() },
-        { url: `${SITE_URL}/projects`, lastModified: new Date() },
-        { url: `${SITE_URL}/publications`, lastModified: new Date() },
-        { url: `${SITE_URL}/blog`, lastModified: new Date() },
-    ];
+  const entries = getEntries();
 
-    const blogRoutes: MetadataRoute.Sitemap =
-        getBlogPosts().map((post) => ({
-            url: `${SITE_URL}/blog/${post.slug}`,
-            lastModified: new Date(post.date),
-        }));
+  let sitemapData: MetadataRoute.Sitemap = [];
 
-    const projectRoutes: MetadataRoute.Sitemap =
-        getProjects().map((p: any) => ({
-            url: `${SITE_URL}/projects#${p.id}`,
-            lastModified: new Date(),
-        }));
+  entries.map((entry) => {
+    sitemapData.push({
+      url: `${SITE_URL}/${entry.type}`,
+      lastModified: entry.date ? new Date(entry.date) : new Date(),
+    });
 
-    const publicationRoutes: MetadataRoute.Sitemap =
-        getPublications().map((p) => ({
-            url: `${SITE_URL}/publications#${p.id}`,
-            lastModified: p.year ? new Date(p.year, 0, 1) : new Date(),
-        }));
+    sitemapData.push({
+      url: `${SITE_URL}/${entry.type}/${entry.id}`,
+      lastModified: entry.date ? new Date(entry.date) : new Date(),
+    });
+  });
 
-    return [
-        ...staticRoutes,
-        ...blogRoutes,
-        ...projectRoutes,
-        ...publicationRoutes,
-    ];
+  return [...sitemapData];
 }

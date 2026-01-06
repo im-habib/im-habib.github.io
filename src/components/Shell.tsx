@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
 
-
 const HEADER_H = 52;
 
 export default function Shell({ children }: { children: React.ReactNode }) {
@@ -11,7 +10,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen">
-      <Header nav={nav} />
+      <Header />
 
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-[300px_1fr]">

@@ -1,32 +1,23 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useMemo, useState } from "react";
 
 import ThemeToggle from "@/components/ThemeToggle";
+import { useContent } from "@/context/ContentProvider";
 
-type NavItem = {
-  label: string;
-  href: string;
-  enabled?: boolean;
-};
+export default function Header() {
+  const { nav } = useContent();
 
-type NavData = {
-  site_title: string;
-  light_logo_url?: string;
-  dark_logo_url?: string;
-  items: NavItem[];
-};
+  // console.log("nav in Header: ", nav);
 
-export default function Header({ nav }: { nav: NavData }) {
+  useEffect(() => setMounted(true), []);
+
   const items = nav.items.filter((i) => i.enabled !== false);
 
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
 
   const logoSrc = useMemo(() => {
     // Avoid hydration mismatch: before mounted, pick light as safe default

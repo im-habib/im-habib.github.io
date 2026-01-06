@@ -17,8 +17,8 @@
   ],
 
   "affiliation": {
-    "institution": "Xi’an Jiaotong University (XJTU)",
-    "department": "PhD Student in Biomedical Engineering",
+    "institution": "Xidian University (XDU)",
+    "department": "PhD Student in Computer Science and Technology",
     "location": "Xi’an, China"
   },
 
@@ -39,23 +39,11 @@
 
   "research_interests": [
     "Optimization",
-    "EEG Signal Modeling",
-    "Adaptive Neurofeedback",
-    "Brain Network Analysis",
     "Deep Reinforcement Learning (DRL)",
     "Financial Deep Reinforcement Learning (FinDRL)"
   ],
 
   "stories": [
-    {
-      "id": "neurasynk",
-      "title": "Neurasynk – Adaptive Brain Network Neurofeedback via Deep Reinforcement Learning",
-      "body": [
-        "A real-time, closed-loop neurofeedback system leveraging Deep Reinforcement Learning (DRL) to dynamically modulate brain networks.",
-        "It synchronizes EEG-based brain connectivity features with adaptive feedback strategies to deliver personalized cognitive enhancement and non-invasive therapeutic interventions."
-      ],
-      "href": "/projects"
-    },
     {
       "id": "tipo",
       "title": "End-to-End Technical Indicator Parameter Optimization (Dynamic Approach)",
@@ -63,7 +51,7 @@
         "A framework that automates technical indicator parameter optimization and rigorous validation.",
         "Designed to establish a stronger standard for evaluating indicator-based trading strategies with thorough testing across parameters and conditions."
       ],
-      "href": "/projects"
+      "href": "/project"
     },
     {
       "id": "siopa",
@@ -72,7 +60,7 @@
         "A deep neural network framework to classify and predict optimal stock indicator parameters.",
         "Uses historical data and backtesting metrics (Sharpe ratio, max drawdown) to streamline parameter optimization and improve trading performance."
       ],
-      "href": "/projects"
+      "href": "/project"
     }
   ]
 }
