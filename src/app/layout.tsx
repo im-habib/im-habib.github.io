@@ -3,24 +3,12 @@ import "@/app/globals.css";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
-import { ContentProvider } from "@/context/ContentProvider";
 
 import Shell from "@/components/Shell";
+// import TurnstileGate from "@/components/TurnstileGate";
 import ThemeProvider from "@/components/ThemeProvider";
-import {
-  getBlogPosts,
-  getEducation,
-  getExperience,
-  getHome,
-  getNav,
-  getProfile,
-  getProjectDetails,
-  getProjects,
-  getPublications,
-} from "@/lib/data";
-import { CF_SITE_KEY, CF_SECRET_KEY } from "@/config";
-import { verifyTurnstileToken } from "@/lib/verifyTurnstile";
-import TurnstileGate from "@/components/TurnstileGate";
+import { ContentProvider } from "@/context/ContentProvider";
+import { getNav, getProfile, getEntries } from "@/lib/data";
 
 // 1. Optimize Fonts (Prevents Layout Shift)
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -65,22 +53,13 @@ export default function RootLayout({
 }) {
   const content = {
     nav: getNav(),
+    data: getEntries(),
     profile: getProfile(),
-    home: getHome(),
-    education: getEducation(),
-    experience: getExperience(),
-    projects: getProjects(),
-    publications: getPublications(),
-    blogposts: getBlogPosts(),
-    details: getProjectDetails(),
   };
 
-  // console.log("content: ", content);
-
-  // const {} = aw÷ait verifyTurnstileToken(CF_SITE_KEY, CF_SECRET_KEY);
+  console.log("content: ", content);
 
   return (
-    // suppressHydrationWarning is necessary for next-themes
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://challenges.cloudflare.com" />
@@ -92,7 +71,7 @@ export default function RootLayout({
           defer
         />
 
-        <TurnstileGate />
+        {/* <TurnstileGate /> */}
 
         <ThemeProvider>
           <ContentProvider value={content}>

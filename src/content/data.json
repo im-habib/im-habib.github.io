@@ -1,0 +1,461 @@
+[
+  {
+    "id": "phd-xjtu",
+    "type": "education",
+    "title": "PhD in Biomedical Engineering",
+    "body": [
+      "Research Focus: Deep Reinforcement Learning (DRL) for adaptive neurofeedback and optimization in brain–computer interface (BCI) systems.",
+      "Research areas include EEG-based neurofeedback, brain network modeling, and real-time closed-loop learning systems."
+    ],
+    "institution": "Xi’an Jiaotong University (XJTU)",
+    "location": "Xi’an, China",
+    "start_date": "Sep 2025",
+    "end_date": "Present",
+    "degree": "PhD in Biomedical Engineering",
+    "links": {
+      "institution": "https://en.xjtu.edu.cn"
+    }
+  },
+  {
+    "id": "meng-xdu",
+    "type": "education",
+    "title": "MEng in Computer Science and Technology",
+    "body": [
+      "Overall Grade: 91.84%.",
+      "Thesis: Stock Market Price Forecasting Using Deep Reinforcement Learning Techniques (FinDRL approach).",
+      "Ongoing research collaboration with Xidian University on Financial Deep Reinforcement Learning."
+    ],
+    "institution": "Xidian University (XDU)",
+    "location": "Xi’an, China",
+    "start_date": "Sep 2022",
+    "end_date": "July 2025",
+    "degree": "MEng in Computer Science and Technology",
+    "links": {
+      "institution": "https://en.xidian.edu.cn"
+    }
+  },
+  {
+    "id": "be-ynu",
+    "type": "education",
+    "title": "BE in Computer Science and Technology",
+    "body": [
+      "Overall Grade: 83%.",
+      "Thesis: Cross-Border E-Commerce Solution (B2B & B2C)."
+    ],
+    "institution": "Yunnan University",
+    "location": "Kunming, China",
+    "start_date": "Sep 2018",
+    "end_date": "July 2022",
+    "degree": "BE in Computer Science and Technology",
+    "links": {
+      "institution": "http://english.ynu.edu.cn"
+    }
+  },
+  {
+    "id": "crm-task-automation",
+    "slug": "crm-task-automation",
+    "type": "engineering",
+    "title": "Customer Relation Management (CRM) & Task Automation System",
+    "headline": "Production SaaS for Automotive Operations",
+    "body": [
+      "CRM and task automation system associated with Autofficina Internazionale s.a.s."
+    ],
+    "href": "/projects/crm-task-automation",
+    "links": {
+      "web": "https://www.services.internazionaleauto.com"
+    },
+    "data": {
+      "status": "ongoing",
+      "period": { "start": "May 2021", "end": "Present" },
+      "impact": [
+        "Customer appointment management",
+        "Marketing automation",
+        "Operational workflow optimization"
+      ]
+    }
+  },
+
+  {
+    "id": "neurasynk",
+    "slug": "neurasynk",
+    "type": "research",
+    "title": "Neurasynk – Adaptive Brain Network Neurofeedback via Deep Reinforcement Learning",
+    "headline": "Closed-loop DRL-based Neurofeedback System",
+    "body": [
+      "A real-time, closed-loop neurofeedback system leveraging Deep Reinforcement Learning (DRL).",
+      "Dynamically modulates functional brain connectivity using EEG-based network features."
+    ],
+    "href": "/projects/neurasynk",
+    "links": {
+      "github": "https://github.com/im-habib/DRL-ABNN"
+    },
+    "data": {
+      "status": "ongoing",
+      "period": { "start": "2025", "end": "Present" },
+      "impact": [
+        "Self-optimizing DRL agent for personalized neurofeedback",
+        "Network-level brain modulation",
+        "Real-time adaptive protocol"
+      ]
+    }
+  },
+
+  {
+    "id": "tipo-dynamic",
+    "slug": "tipo-dynamic",
+    "type": "research",
+    "title": "End-to-End Technical Indicator Parameter Optimization (Dynamic Approach)",
+    "headline": "Automated Indicator Optimization for Trading Systems",
+    "body": [
+      "A framework for automating technical indicator parameter optimization.",
+      "Designed for robust evaluation under changing market regimes."
+    ],
+    "href": "/projects/tipo-dynamic",
+    "links": {
+      "code": "/",
+      "demo": "#"
+    },
+    "data": {
+      "status": "ongoing",
+      "period": { "start": "2024", "end": "Present" },
+      "impact": [
+        "Automated parameter optimization",
+        "Rigorous validation pipeline"
+      ]
+    }
+  },
+
+  {
+    "id": "siopa",
+    "slug": "siopa",
+    "type": "research",
+    "title": "SIOPA – Stock Indicator Optimization and Predictive Analysis",
+    "headline": "DNN-driven Indicator Classification Framework",
+    "body": [
+      "A deep neural network framework for classifying stock indicator parameters.",
+      "Uses Sharpe ratio and drawdown-based backtesting metrics."
+    ],
+    "href": "/projects/siopa",
+    "links": {
+      "github": "https://github.com/im-habib/SIOPA-Stock-Indicator-Optimization-and-Predictive-Analysis",
+      "paper": "#"
+    },
+    "data": {
+      "status": "ongoing",
+      "period": { "start": "2024", "end": "Present" },
+      "impact": [
+        "Indicator parameter classification",
+        "Backtest-driven optimization"
+      ]
+    }
+  },
+
+  {
+    "id": "findrl-core",
+    "slug": "findrl",
+    "type": "research",
+    "title": "FinDRL – Financial Deep Reinforcement Learning",
+    "headline": "RL-based Portfolio Management Framework",
+    "body": [
+      "A reinforcement learning framework for adaptive portfolio decision-making.",
+      "Focuses on risk-aware trading in dynamic financial environments."
+    ],
+    "href": "/projects/findrl",
+    "links": {
+      "github": "https://github.com/im-habib/FinDRL",
+      "paper": "#"
+    },
+    "data": {
+      "status": "ongoing",
+      "period": { "start": "2022", "end": "Present" },
+      "impact": [
+        "RL-based portfolio optimization",
+        "Risk-aware trading strategies"
+      ]
+    }
+  },
+
+  {
+    "id": "cross-border-ecommerce",
+    "slug": "cross-border-ecommerce",
+    "type": "engineering",
+    "title": "Cross Border E-Commerce Solution (B2B & B2C)",
+    "headline": "End-to-End Cross-Region E-Commerce Platform",
+    "body": [
+      "Cross-border e-commerce solution developed at Yunnan University.",
+      "Integrates logistics, payments, and regional workflows."
+    ],
+    "href": "/projects/cross-border-ecommerce",
+    "links": {
+      "github": "https://github.com/im-habib/b2b-b2c-cross-border"
+    },
+    "data": {
+      "status": "completed",
+      "period": { "start": "Feb 2022", "end": "Feb 2022" },
+      "impact": ["Full-stack cross-border commerce workflow"]
+    }
+  },
+
+  {
+    "id": "smart-charging-station",
+    "slug": "smart-charging-station",
+    "type": "engineering",
+    "title": "Smart Charging Station with ESP32 and Raspberry Pi",
+    "headline": "IoT-enabled Charging Infrastructure",
+    "body": [
+      "Smart charging station integrating embedded systems and cloud services."
+    ],
+    "href": "/projects/smart-charging-station",
+    "links": {
+      "github": "https://github.com/im-habib/smartchargingstation"
+    },
+    "data": {
+      "status": "completed",
+      "period": { "start": "Jan 2021", "end": "Jan 2021" },
+      "impact": ["Embedded + cloud + web integration"]
+    }
+  },
+
+  {
+    "id": "fiscal-tax-csr-chinese-agri",
+    "slug": "fiscal-tax-csr-chinese-agri",
+    "type": "publication",
+    "title": "Impact of Fiscal and Tax Policies and CSR on Financial Performance",
+    "headline": "Empirical Study on Chinese Agricultural Firms",
+    "body": [
+      "Analyzes fiscal policy, taxation, and corporate social responsibility impacts on firm performance."
+    ],
+    "href": "/publication/fiscal-tax-csr-chinese-agri",
+    "links": {
+      "paper": "https://d1wqtxts1xzle7.cloudfront.net/100181321/7._IJLHSS_02_20_29-libre.pdf"
+    },
+    "data": {
+      "year": 2023,
+      "venue": "International Journal of Law, Humanities & Social Science",
+      "authors": [
+        "Md Mostafijur Rahman",
+        "Mohsina Khatun",
+        "Abu Sayem Md Habibullah"
+      ]
+    }
+  },
+
+  {
+    "id": "csr-envreg-finperf-heavy-pollution",
+    "slug": "csr-envreg-finperf-heavy-pollution",
+    "type": "publication",
+    "title": "CSR, Environmental Regulation and Financial Performance",
+    "headline": "Evidence from Heavy Pollution Industries",
+    "body": [
+      "Empirical analysis of CSR and environmental regulation on firm performance."
+    ],
+    "href": "/publication/csr-envreg-finperf-heavy-pollution",
+    "links": {
+      "paper": "https://www.ijbssr.com/journal/detailsview/an-empirical-study-on-corporate-social-responsibility-environmental-regulation-and-financial-performance-based-on-heavy-pollution-industry-14013441"
+    },
+    "data": {
+      "year": 2023,
+      "venue": "International Journal of Business, Social and Scientific Research",
+      "authors": [
+        "Md Mostafijur Rahman",
+        "Yanchun Zhu",
+        "Abu Sayem Md Habibullah"
+      ]
+    }
+  },
+  {
+    "id": "autofficina-internazionale",
+    "slug": "autofficina-internazionale",
+    "type": "experience",
+    "title": "Software Engineer · Autofficina Internazionale s.a.s",
+    "headline": "Production SaaS & Automotive Automation Systems",
+    "body": [
+      "Designed and maintained production-grade SaaS platforms for automotive operations.",
+      "Worked across CRM, marketing automation, telematics integration, and performance optimization."
+    ],
+    "links": {
+      "company": "https://www.internazionaleauto.com"
+    },
+    "data": {
+      "category": "industry",
+      "location": "Remote",
+      "period": { "start": "May 2021", "end": "Present" },
+      "highlights": [
+        "Built and maintained SaaS systems for customer appointment management, marketing systems, dynamic page building, URL shortening, and telematics integration.",
+        "Reduced data storage usage by 33.33% through schema optimization and system refactoring.",
+        "Improved customer satisfaction by ~10% by deploying a DNN-based diagnostic system for 14 common vehicle issues.",
+        "Improved server query response time by 15% using microservices architecture and CI/CD optimization."
+      ]
+    }
+  },
+
+  {
+    "id": "breeze-bangladesh",
+    "slug": "breeze-bangladesh",
+    "type": "experience",
+    "title": "IT Team Instructor · Breeze Bangladesh LTD",
+    "headline": "Remote Technical Mentorship & CI/CD Optimization",
+    "body": [
+      "Provided technical mentorship and hands-on support for distributed IT teams.",
+      "Focused on improving delivery speed, reliability, and developer workflows."
+    ],
+    "links": {
+      "company": "https://github.com/breezebd"
+    },
+    "data": {
+      "category": "industry",
+      "location": "Remote",
+      "period": { "start": "Jan 2021", "end": "Apr 2023" },
+      "highlights": [
+        "Provided advanced technical assistance beyond standard hours to resolve customer and system-level issues.",
+        "Improved customer trust by refining technical guidance and service evaluation criteria.",
+        "Increased development velocity by ~20% through CI/CD pipeline improvements."
+      ]
+    }
+  },
+
+  {
+    "id": "bright-host-it-institute",
+    "slug": "bright-host-it-institute",
+    "type": "experience",
+    "title": "Web Application Developer & SEO Instructor · Bright Host IT Institute",
+    "headline": "Web Development, SEO & Technical Training",
+    "body": [
+      "Developed web applications and trained students in SEO-focused development.",
+      "Combined performance engineering with search visibility best practices."
+    ],
+    "links": {
+      "company": "https://brighthost-it.com"
+    },
+    "data": {
+      "category": "industry",
+      "location": "On-site",
+      "period": { "start": "Jun 2017", "end": "Aug 2018" },
+      "highlights": [
+        "Built responsive, SEO-optimized web applications.",
+        "Improved site performance, load speed, and mobile usability.",
+        "Implemented structured data, XML sitemaps, and crawl optimization.",
+        "Trained teams on keyword research, on-page SEO, and content optimization.",
+        "Applied secure coding practices to preserve SEO integrity."
+      ]
+    }
+  },
+
+  {
+    "id": "impel-service-solutions",
+    "slug": "impel-service-solutions",
+    "type": "experience",
+    "title": "Call Center Agent · Impel Service & Solutions Limited",
+    "headline": "Technical Support & Crisis Resolution",
+    "body": [
+      "Provided real-time technical support for major telecom providers.",
+      "Focused on high-quality customer communication and rapid issue resolution."
+    ],
+    "links": {
+      "company": "https://issl.com.bd"
+    },
+    "data": {
+      "category": "industry",
+      "location": "On-site",
+      "period": { "start": "Dec 2016", "end": "May 2017" },
+      "highlights": [
+        "Resolved complex account and technical issues for GP and Robi customers.",
+        "Maintained high First Call Resolution (FCR) KPIs.",
+        "Handled crisis scenarios with clear communication and efficiency."
+      ]
+    }
+  },
+
+  {
+    "id": "square-apparels",
+    "slug": "square-apparels",
+    "type": "experience",
+    "title": "Assistant Printer · Square Apparels Limited",
+    "headline": "Sample Printing & Cross-Department Coordination",
+    "body": [
+      "Worked in the sample printing line supporting international apparel buyers.",
+      "Acted as a coordination bridge between production, merchandising, and management."
+    ],
+    "links": {
+      "company": "https://www.squareapparels.com"
+    },
+    "data": {
+      "category": "industry",
+      "location": "On-site",
+      "period": { "start": "Sep 2015", "end": "Aug 2016" },
+      "highlights": [
+        "Supported buyer-driven sample development for international clients including SOLIVER and SPRIT.",
+        "Reviewed buyer and merchandising update requests and coordinated fabric requisitions.",
+        "Guided sample-line workers during design updates to ensure accurate execution."
+      ]
+    }
+  },
+
+  {
+    "id": "ra-xdu-bigdata-lab",
+    "slug": "ra-xdu-bigdata-lab",
+    "type": "experience",
+    "title": "Research Assistant · State Key Lab, Xidian University",
+    "headline": "Financial Deep Reinforcement Learning Research",
+    "body": [
+      "Conducted research on Financial Deep Reinforcement Learning (FinDRL).",
+      "Focused on market prediction, optimization, and portfolio management."
+    ],
+    "links": {
+      "institution": "https://en.xidian.edu.cn"
+    },
+    "data": {
+      "category": "academic",
+      "location": "Xi’an, China",
+      "period": { "start": "Oct 2022", "end": "Jul 2025" },
+      "technologies": [
+        "Python",
+        "Deep Reinforcement Learning",
+        "Financial Time-Series Analysis",
+        "Optimization Algorithms"
+      ],
+      "highlights": [
+        "Developed DRL models for stock price forecasting under non-stationary market conditions.",
+        "Investigated AI-driven portfolio optimization strategies.",
+        "Assisted in supervising undergraduate students and supporting lab research projects.",
+        "Research Title: Stock Market Price Forecasting Using Deep Reinforcement Learning Techniques (FinDRL).",
+        "Supervisor: Prof. Dr. Wang Shuzhen."
+      ]
+    }
+  },
+
+  {
+    "id": "ug-research-ynu",
+    "slug": "ug-research-ynu",
+    "type": "experience",
+    "title": "Undergraduate Thesis Work · Yunnan University",
+    "headline": "Cross-Border E-Commerce & Distributed Systems",
+    "body": [
+      "Undergraduate research on cross-border e-commerce systems.",
+      "Focused on scalable microservice-based architecture."
+    ],
+    "links": {
+      "institution": "http://english.ynu.edu.cn"
+    },
+    "data": {
+      "category": "academic",
+      "location": "Kunming, China",
+      "period": { "start": "Feb 2022", "end": "Jul 2022" },
+      "technologies": [
+        "Docker",
+        "Kubernetes",
+        "MongoDB",
+        "Redis",
+        "PostgreSQL",
+        "TypeScript",
+        "Python"
+      ],
+      "highlights": [
+        "Thesis: B2B & B2C Cross-Border E-Commerce Solution.",
+        "Designed supply chain and logistics integration.",
+        "Implemented scalable microservice architecture.",
+        "Supervisor: Prof. Dr. Xiaobing Zhou."
+      ]
+    }
+  }
+]

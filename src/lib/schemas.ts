@@ -1,65 +1,36 @@
 import { z } from "zod";
 
+/* =========================
+   NAV (config)
+   ========================= */
 export const NavSchema = z.object({
-  dark_logo_url: z.string(),
-  light_logo_url: z.string(),
   site_title: z.string(),
+  dark_logo_url: z.string().optional(),
+  light_logo_url: z.string().optional(),
   items: z.array(
     z.object({
       label: z.string(),
-      href: z.string().min(1),
+      href: z.string(),
       enabled: z.boolean().optional(),
     })
   ),
 });
+export type NavData = z.infer<typeof NavSchema>;
 
-export const HomeSchema = z.object({
-  summary: z.object({
-    headline: z.string(),
-    body: z.array(z.string()),
-  }),
-  stories: z.array(
-    z.object({
-      id: z.string(),
-      title: z.string(),
-      body: z.array(z.string()),
-      href: z.string(),
-      images: z.array(z.string()).optional(),
-    })
-  ),
-});
-
-/** ---------- Education (ARRAY) ---------- */
-export const EducationItemSchema = z.object({
-  id: z.string(),
-  degree: z.string(),
-  institution: z.string(),
-  location: z.string().optional(),
-  start_date: z.string(),
-  end_date: z.string(),
-  details: z.array(z.string()).optional(),
-  links: z
-    .object({
-      institution: z.string().min(1).optional(),
-    })
-    .optional(),
-});
-export const EducationSchema = z.array(EducationItemSchema);
-
-/** links: allow empty object or missing */
-export const LinksSchema = z.record(z.string().min(1)).optional();
-
-/** ---------- Profile (OBJECT) ---------- */
+/* =========================
+   PROFILE (about/person)
+   ========================= */
 export const ProfileSchema = z.object({
   id: z.string(),
+  avatar: z.string().optional(),
   name: z.object({
     full: z.string(),
     title: z.string().optional(),
     sidebar: z.string().optional(),
   }),
-  avatar: z.string().optional(),
-  bio: z.string(),
-  bio_short: z.string().optional(),
+  headline: z.string().optional(),
+  body: z.array(z.string()).optional(),
+  stories: z.array(z.any()).optional(),
   affiliation: z
     .object({
       institution: z.string(),
@@ -75,160 +46,55 @@ export const ProfileSchema = z.object({
       location: z.string().optional(),
     })
     .optional(),
-  social: z.record(z.string().min(1)).optional(),
-  cv: z.object({ pdf: z.string().min(1) }).optional(),
+  social: z.record(z.string()).optional(),
+  cv: z.object({ pdf: z.string() }).optional(),
 });
+export type ProfileData = z.infer<typeof ProfileSchema>;
 
-/** ---------- Experience (ARRAY) ---------- */
-export const ExperienceItemSchema = z.object({
-  id: z.string(),
-  role: z.string(),
-  organization: z.string(),
-  type: z.enum(["academic", "industry"]).optional(),
+/* =========================
+   ONE UNIFIED "ENTRIES" COLLECTION
+   (home/education/experience/projects/publications/blog/etc)
+   ========================= */
+export const EntrySchema = z.object({
+  id: z.string().min(1),
+  type: z.string().min(1),
+
+  slug: z.string().optional(),
+  title: z.string().min(1),
+  headline: z.string().optional(),
+  body: z.array(z.string()).optional(),
+
+  href: z.string().optional(),
+  images: z.array(z.string()).optional(),
+  links: z.record(z.string()).optional(),
+
+  date: z.string().optional(),
+  start_date: z.string().optional(),
+  end_date: z.string().optional(),
   location: z.string().optional(),
-  start_date: z.string(),
-  end_date: z.string(),
-  description: z.string().optional(),
-  highlights: z.array(z.string()).optional(),
-  technologies: z.array(z.string()).optional(),
-  links: LinksSchema,
-});
-export const ExperienceSchema = z.array(ExperienceItemSchema);
 
-/** ---------- Publications (ARRAY) ---------- */
-export const PublicationSchema = z.object({
-  id: z.string(),
-  title: z.string(),
-  authors: z.array(z.string()),
+  institution: z.string().optional(),
+  organization: z.string().optional(),
+  role: z.string().optional(),
+  degree: z.string().optional(),
+  venue: z.string().optional(),
   year: z.number().optional(),
-  type: z.enum(["conference", "journal", "workshop", "preprint"]).optional(),
+  draft: z.boolean().optional(),
 
-  venue: z
-    .union([
-      z.string(),
-      z.object({
-        name: z.string(),
-        tier: z.string().optional(),
-        location: z.string().optional(),
-      }),
-    ])
-    .optional(),
-
-  status: z
-    .enum(["published", "under_review", "preprint", "in_preparation"])
-    .optional(),
-
-  abstract: z.string().optional(),
-  keywords: z.array(z.string()).optional(),
-  links: LinksSchema,
-});
-
-export const PublicationsSchema = z.array(PublicationSchema);
-
-/** ---------- Projects (ARRAY) ---------- */
-export const ProjectSchema = z.object({
-  id: z.string(),
-  title: z.string(),
-  type: z.enum(["research", "industry", "engineering"]),
-  status: z.enum(["active", "ongoing", "completed"]).optional(),
-  period: z
+  meta: z
     .object({
-      start: z.string(),
-      end: z.string(),
+      title: z.string().optional(),
+      description: z.string().optional(),
+      keywords: z.array(z.string()).optional(),
+      image: z.string().optional(),
+      canonical: z.string().optional(),
     })
     .optional(),
-  summary: z.string(),
-  problem: z.string().optional(),
-  solution: z.string().optional(),
-  impact: z.array(z.string()).optional(),
-  technologies: z.array(z.string()).optional(),
-  links: LinksSchema,
+
+  data: z.record(z.any()).optional(),
 });
 
-export const ProjectsSchema = z.array(ProjectSchema);
+export const EntriesSchema = z.array(EntrySchema);
 
-
-const ProjectDetailSchema = z.object({
-  project_id: z.string(),
-  project_summary: z.object({
-    vision: z.string(),
-    problem_statement: z.string(),
-    solution: z.string(),
-    key_innovation: z.string(),
-  }),
-  detailed_specification: z.object({
-    workflow: z.array(
-      z.object({
-        step: z.number(),
-        phase: z.string(),
-        description: z.string(),
-      })
-    ),
-    drl_framework: z.object({
-      algorithm: z.string(),
-      state_space: z.string(),
-      action_space: z.string(),
-      reward_function: z.string(),
-    }),
-    expected_results: z.object({
-      technical: z.array(z.string()),
-      neural: z.array(z.string()),
-      behavioral: z.array(z.string()),
-    }),
-    technical_stack: z.object({
-      languages: z.array(z.string()),
-      libraries: z.array(z.string()),
-      hardware_integration: z.array(z.string()),
-      feedback_interface: z.array(z.string()),
-    }),
-  }),
-});
-
-export const ProjectDetailsSchema = z.array(ProjectDetailSchema);
-
-
-/** JSON-only blog blocks (safe rendering; no raw HTML) */
-export const BlogBlockSchema = z.discriminatedUnion("type", [
-  z.object({ type: z.literal("h2"), text: z.string() }),
-  z.object({ type: z.literal("h3"), text: z.string() }),
-  z.object({ type: z.literal("p"), text: z.string() }),
-  z.object({ type: z.literal("ul"), items: z.array(z.string()) }),
-  z.object({ type: z.literal("ol"), items: z.array(z.string()) }),
-  z.object({
-    type: z.literal("quote"),
-    text: z.string(),
-    cite: z.string().optional(),
-  }),
-  z.object({
-    type: z.literal("code"),
-    language: z.string().optional(),
-    code: z.string(),
-  }),
-]);
-
-export const BlogPostSchema = z.object({
-  id: z.string(),
-  title: z.string(),
-  slug: z.string(),
-  date: z.string(),
-  summary: z.string().optional(),
-  tags: z.array(z.string()).optional(),
-  draft: z.boolean().optional(),
-  links: LinksSchema,
-  content: z.array(BlogBlockSchema),
-});
-
-export const BlogPostsSchema = z.object({
-  posts: z.array(BlogPostSchema),
-});
-
-export type BlogPost = z.infer<typeof BlogPostSchema>;
-
-export const DetailsSchema = z.array(
-  z.object({
-    slug: z.string(),
-    title: z.string(),
-    summary: z.array(z.string()).optional(),
-    links: z.record(z.string().optional()).optional(),
-  })
-);
+export type Entry = z.infer<typeof EntrySchema>;
+export type EntriesData = z.infer<typeof EntriesSchema>;

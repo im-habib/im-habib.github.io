@@ -63,7 +63,7 @@ html.dark {
   /* paragraphs (main reading color) */
 
   /* Borders: very subtle (don’t outline everything) */
-  --border: rgba(220, 230, 255, 0.10);
+  --border: rgba(220, 230, 255, 0.1);
 
   /* Shadows: gentle, not “heavy neon” */
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
@@ -156,14 +156,14 @@ li {
 
 /* Sticky chrome should look LIGHT in both themes */
 header {
-  background: var(--surface);
+  /* background: var(--surface); */
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 aside {
-  background: var(--surface);
+  /* background: var(--surface); */
   border-right: 1px solid var(--border);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -200,17 +200,6 @@ main {
   background: transparent;
 }
 
-html.dark main {
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.00));
-}
-
-html.dark header,
-html.dark aside {
-  background: rgba(28, 36, 52, 0.78);
-}
-
 /* =========================
    COMPONENT-LIKE ELEMENTS
    ========================= */
@@ -224,11 +213,13 @@ article {
 }
 
 /* Dark mode: slightly lift cards from background */
-html.dark article {
-  background: linear-gradient(180deg,
-      rgba(17, 24, 39, 0.95),
-      rgba(17, 24, 39, 0.85));
-}
+/* html.dark article {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.95),
+    rgba(17, 24, 39, 0.85)
+  );
+} */
 
 /* Section header underline (your screenshot) */
 h2[data-section="true"] {
@@ -279,4 +270,8 @@ pre {
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
+}
+
+footer {
+  background: var(--surface);
 }

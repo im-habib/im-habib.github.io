@@ -38,7 +38,7 @@ export default function Header({ nav }: { nav: NavData }) {
   }, [mounted, resolvedTheme, nav.light_logo_url, nav.dark_logo_url]);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b">
+    <header className="sticky top-0 z-50 backdrop-blur-md border-b">
       <div className="mx-auto max-w-6xl px-6 py-3">
         <div className="flex items-center justify-between gap-4">
           <Link
@@ -83,4 +83,4 @@ export default function Header({ nav }: { nav: NavData }) {
       </div>
     </header>
   );
-};
+}

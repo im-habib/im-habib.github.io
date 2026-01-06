@@ -1,30 +1,42 @@
 {
   "id": "as-md-habibullah",
   "avatar": "/avatar.jpg",
+
   "name": {
     "full": "As Md Habibullah",
     "sidebar": "As Md Habibullah",
-    "title": "Software Engineer & PhD Student"
+    "title": "Software Engineer & PhD Student."
   },
-  "bio_short": "Researcher in Biomedical Engineering at Xi’an Jiaotong University (XJTU), working on Deep Reinforcement Learning for adaptive neurofeedback and optimization; Software Engineer building production SaaS systems.",
-  "bio": "I am a doctoral researcher in Biomedical Engineering at Xi’an Jiaotong University (XJTU), where my research focuses on Deep Reinforcement Learning (DRL) for adaptive neurofeedback and optimization in brain–computer interface (BCI) systems. My work investigates how learning agents can operate robustly in non-stationary, noisy, and partially observable neural environments using EEG-based feedback.\n\nIn parallel, I collaborate with Xidian University (XDU) on my previous research line in Financial Deep Reinforcement Learning, working with my former supervisor on reinforcement learning–based stock trading and portfolio optimization under non-stationary market conditions.\n\nAlongside academic research, I work as a Software Engineer at Autofficina Internazionale s.a.s, where I design and maintain production-grade SaaS systems. My work spans customer appointment management, marketing automation, dynamic content generation, URL shorteners, and vehicle telematics—driven by performance, reliability, and measurable business impact.",
+
+  "headline": "Software Engineer | Optimization & Deep Reinforcement Learning Researcher.",
+  "body": [
+    "I am a Doctoral Researcher at Xidian University (XDU): Specializing in Deep Reinforcement Learning (DRL) for adaptive systems, focusing on agent robustness in non-stationary and noisy environments.",
+    "FinDRL Research Lead: Developing multi-agent frameworks for stock trading and portfolio optimization under dynamic market conditions.",
+    "Research Interests: Deep Reinforcement Learning, quantitative time-series analysis, risk-aware reward design, and the empirical evaluation of learning agents.",
+    "Senior Software Engineer: Architecting production-grade SaaS systems at Autofficina Internazionale s.a.s, covering telematics, marketing automation, and CRM solutions."
+  ],
+
   "affiliation": {
     "institution": "Xi’an Jiaotong University (XJTU)",
     "department": "PhD Student in Biomedical Engineering",
     "location": "Xi’an, China"
   },
+
   "contact": {
     "email": "habib@scholariest.com"
   },
+
   "social": {
     "github": "https://github.com/im-habib",
     "twitter": "https://twitter.com/the_habib",
     "linkedin": "https://www.linkedin.com/in/im-habib",
     "google_scholar": "https://scholar.google.com/citations?hl=en&user=NwSjZScAAAAJ"
   },
+
   "cv": {
     "pdf": "/resume.pdf"
   },
+
   "research_interests": [
     "Optimization",
     "EEG Signal Modeling",
@@ -32,5 +44,35 @@
     "Brain Network Analysis",
     "Deep Reinforcement Learning (DRL)",
     "Financial Deep Reinforcement Learning (FinDRL)"
+  ],
+
+  "stories": [
+    {
+      "id": "neurasynk",
+      "title": "Neurasynk – Adaptive Brain Network Neurofeedback via Deep Reinforcement Learning",
+      "body": [
+        "A real-time, closed-loop neurofeedback system leveraging Deep Reinforcement Learning (DRL) to dynamically modulate brain networks.",
+        "It synchronizes EEG-based brain connectivity features with adaptive feedback strategies to deliver personalized cognitive enhancement and non-invasive therapeutic interventions."
+      ],
+      "href": "/projects"
+    },
+    {
+      "id": "tipo",
+      "title": "End-to-End Technical Indicator Parameter Optimization (Dynamic Approach)",
+      "body": [
+        "A framework that automates technical indicator parameter optimization and rigorous validation.",
+        "Designed to establish a stronger standard for evaluating indicator-based trading strategies with thorough testing across parameters and conditions."
+      ],
+      "href": "/projects"
+    },
+    {
+      "id": "siopa",
+      "title": "SIOPA – Stock Indicator Optimization and Predictive Analysis",
+      "body": [
+        "A deep neural network framework to classify and predict optimal stock indicator parameters.",
+        "Uses historical data and backtesting metrics (Sharpe ratio, max drawdown) to streamline parameter optimization and improve trading performance."
+      ],
+      "href": "/projects"
+    }
   ]
 }

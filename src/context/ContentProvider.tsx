@@ -1,45 +1,36 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
+import type { NavData, ProfileData, Entry } from "@/lib/schemas";
 
-type NavItem = { label: string; href: string; enabled?: boolean };
-type NavData = {
-    items: NavItem[];
-    site_title: string;
-    dark_logo_url?: string;
-    light_logo_url?: string;
+/* ---------- Unified Content Shape ---------- */
+export type Content = {
+  nav: NavData;
+  data: Entry[];
+  profile: ProfileData;
 };
 
-type Content = {
-    nav: NavData;
-    home?: unknown;
-    profile?: unknown;
-    details?: unknown;
-    projects?: unknown;
-    educations?: unknown;
-    storyposts?: unknown;
-    experiences?: unknown;
-    publications?: unknown;
-};
-
+/* ---------- Context ---------- */
 const ContentContext = createContext<Content | null>(null);
 
+/* ---------- Provider ---------- */
 export function ContentProvider({
-    value,
-    children,
+  value,
+  children,
 }: {
-    value: Content;
-    children: React.ReactNode;
+  value: Content;
+  children: React.ReactNode;
 }) {
-    return (
-        <ContentContext.Provider value={value}>{children}</ContentContext.Provider>
-    );
+  return (
+    <ContentContext.Provider value={value}>{children}</ContentContext.Provider>
+  );
 }
 
-export function useContent() {
-    const ctx = useContext(ContentContext);
-    if (!ctx) {
-        throw new Error("useContent() must be used inside <ContentProvider>.");
-    }
-    return ctx;
+/* ---------- Hook ---------- */
+export function useContent(): Content {
+  const ctx = useContext(ContentContext);
+  if (!ctx) {
+    throw new Error("useContent() must be used inside <ContentProvider>.");
+  }
+  return ctx;
 }

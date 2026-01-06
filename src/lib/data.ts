@@ -1,18 +1,12 @@
+import "server-only";
+
 import fs from "fs";
 import path from "path";
-import {
-  BlogPost,
-  NavSchema,
-  HomeSchema,
-  DetailsSchema,
-  ProfileSchema,
-  ProjectsSchema,
-  EducationSchema,
-  BlogPostsSchema,
-  ExperienceSchema,
-  PublicationsSchema,
-  ProjectDetailsSchema,
-} from "./schemas";
+import { z } from "zod";
+import { NavSchema, ProfileSchema, EntriesSchema } from "./schemas";
+
+type Entries = z.infer<typeof EntriesSchema>;
+type Entry = Entries[number];
 
 /** Read JSON relative to /src */
 function readJSON(relFromSrc: string) {
@@ -25,76 +19,92 @@ function readJSON(relFromSrc: string) {
   return JSON.parse(fs.readFileSync(p, "utf-8"));
 }
 
-/* ---------------- Navigation ---------------- */
+/** ---- simple in-memory cache (build/runtime safe) ---- */
+let _nav: unknown | null = null;
+let _profile: unknown | null = null;
+let _entries: unknown | null = null;
+
+/* =========================
+   CONFIG LOADERS
+   ========================= */
 
 export function getNav() {
-  return NavSchema.parse(readJSON("content/nav.json"));
+  if (!_nav) _nav = readJSON("content/nav.json");
+  return NavSchema.parse(_nav);
 }
-
-/* ---------------- Home ---------------- */
-
-export function getHome() {
-  return HomeSchema.parse(readJSON("content/home.json"));
-}
-
-/* ---------------- Profile ---------------- */
 
 export function getProfile() {
-  return ProfileSchema.parse(readJSON("content/profile.json"));
+  if (!_profile) _profile = readJSON("content/profile.json");
+  return ProfileSchema.parse(_profile);
 }
 
-/* ---------------- Education (ARRAY) ---------------- */
+/* =========================
+   ONE UNIFIED ENTRIES LOADER
+   ========================= */
 
-export function getEducation() {
-  return EducationSchema.parse(readJSON("content/education.json"));
+export function getEntries(): Entries {
+  if (!_entries) _entries = readJSON("content/data.json");
+  return EntriesSchema.parse(_entries);
 }
 
-/* ---------------- Experience (ARRAY) ---------------- */
+/* =========================
+   ENTRY HELPERS (filtering)
+   ========================= */
 
-export function getExperience() {
-  return ExperienceSchema.parse(readJSON("content/experience.json"));
+export function getEntriesByType(type: string): Entry[] {
+  return getEntries().filter((e) => e.type === type);
 }
 
-/* ---------------- Projects (ARRAY) ---------------- */
-
-export function getProjects() {
-  return ProjectsSchema.parse(readJSON("content/projects.json"));
+export function getEntryById(id: string): Entry | null {
+  return getEntries().find((e) => e.id === id) ?? null;
 }
 
-export function getProjectDetails() {
-  return ProjectDetailsSchema.parse(readJSON("content/details.json"));
+export function getEntryBySlug(type: string, slug: string): Entry | null {
+  return getEntries().find((e) => e.type === type && e.slug === slug) ?? null;
 }
 
-export function getProjectDetailById(id: string) {
-  return getProjectDetails().find((p) => p.project_id === id) ?? null;
+/* =========================
+   COMMON HELPERS
+   ========================= */
+
+export function getPublicEntries(): Entry[] {
+  // If draft === true, hide it. If draft is missing, treat it as public.
+  return getEntries().filter((e) => e.draft !== true);
 }
 
-/* ---------------- Publications (ARRAY) ---------------- */
+/** Sort newest first using: date > year > start_date (best-effort) */
+export function sortEntriesNewestFirst(list: Entry[]): Entry[] {
+  return list.slice().sort((a, b) => {
+    const aKey =
+      (a.date ? Date.parse(a.date) : NaN) ||
+      (typeof a.year === "number" ? Date.parse(`${a.year}-01-01`) : NaN) ||
+      (a.start_date ? Date.parse(`01 ${a.start_date}`) : NaN) ||
+      0;
 
-export function getPublications() {
-  return PublicationsSchema.parse(readJSON("content/publications.json"))
-    .slice()
-    .sort((a: any, b: any) => (b.year ?? 0) - (a.year ?? 0));
+    const bKey =
+      (b.date ? Date.parse(b.date) : NaN) ||
+      (typeof b.year === "number" ? Date.parse(`${b.year}-01-01`) : NaN) ||
+      (b.start_date ? Date.parse(`01 ${b.start_date}`) : NaN) ||
+      0;
+
+    return bKey - aKey;
+  });
 }
 
-/* ---------------- Blog ---------------- */
+/* =========================
+   OPTIONAL: typed known types
+   ========================= */
 
-export function getBlogPosts(): BlogPost[] {
-  return BlogPostsSchema.parse(readJSON("content/blogposts.json"))
-    .posts.filter((p: any) => !p.draft)
-    .slice()
-    .sort((a: any, b: any) => (a.date < b.date ? 1 : -1));
-}
+const KnownTypesSchema = z.enum([
+  "story",
+  "project",
+  "education",
+  "experience",
+  "publication",
+]);
 
-export function getBlogPostBySlug(slug: string): BlogPost | null {
-  const posts = BlogPostsSchema.parse(readJSON("content/blogposts.json")).posts;
-  return posts.find((p: any) => p.slug === slug && !p.draft) ?? null;
-}
+export type KnownType = z.infer<typeof KnownTypesSchema>;
 
-export function getDetails() {
-  return DetailsSchema.parse(readJSON("content/details.json"));
-}
-
-export function getDetailBySlug(slug: string) {
-  return getDetails().find((d: any) => d.slug === slug) ?? null;
+export function getTypedEntries(type: KnownType): Entry[] {
+  return getEntriesByType(type);
 }
