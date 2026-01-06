@@ -21,7 +21,7 @@
     "type": "education",
     "title": "MEng in Computer Science and Technology",
     "body": [
-      "Overall Grade: 91.84%.",
+      "Overall Grade: 91%",
       "Thesis: Stock Market Price Forecasting Using Deep Reinforcement Learning Techniques (FinDRL approach).",
       "Ongoing research collaboration with Xidian University on Financial Deep Reinforcement Learning."
     ],
@@ -39,7 +39,7 @@
     "type": "education",
     "title": "BE in Computer Science and Technology",
     "body": [
-      "Overall Grade: 83%.",
+      "Overall Grade: 82%",
       "Thesis: Cross-Border E-Commerce Solution (B2B & B2C)."
     ],
     "institution": "Yunnan University",
@@ -75,43 +75,18 @@
   },
 
   {
-    "id": "neurasynk",
-    "slug": "neurasynk",
-    "type": "research",
-    "title": "Neurasynk – Adaptive Brain Network Neurofeedback via Deep Reinforcement Learning",
-    "headline": "Closed-loop DRL-based Neurofeedback System",
-    "body": [
-      "A real-time, closed-loop neurofeedback system leveraging Deep Reinforcement Learning (DRL).",
-      "Dynamically modulates functional brain connectivity using EEG-based network features."
-    ],
-    "href": "/research/neurasynk",
-    "links": {
-      "github": "https://github.com/im-habib/DRL-ABNN"
-    },
-    "data": {
-      "status": "ongoing",
-      "period": { "start": "2025", "end": "Present" },
-      "impact": [
-        "Self-optimizing DRL agent for personalized neurofeedback",
-        "Network-level brain modulation",
-        "Real-time adaptive protocol"
-      ]
-    }
-  },
-
-  {
-    "id": "tipo-dynamic",
+    "id": "e2e-tipo",
     "slug": "tipo-dynamic",
     "type": "research",
-    "title": "End-to-End Technical Indicator Parameter Optimization (Dynamic Approach)",
+    "title": "End-to-End Stock Market Technical Indicator Parameters Optimization and Performance Analysis: A Deep Learning Approach",
     "headline": "Automated Indicator Optimization for Trading Systems",
     "body": [
       "A framework for automating technical indicator parameter optimization.",
       "Designed for robust evaluation under changing market regimes."
     ],
-    "href": "/research/tipo-dynamic",
+    "href": "/research/E2E-TIPO",
     "links": {
-      "code": "/",
+      "code": "https://github.com/quantrl/E2E-TIPO",
       "demo": "#"
     },
     "data": {
@@ -120,31 +95,6 @@
       "impact": [
         "Automated parameter optimization",
         "Rigorous validation pipeline"
-      ]
-    }
-  },
-
-  {
-    "id": "siopa",
-    "slug": "siopa",
-    "type": "research",
-    "title": "SIOPA – Stock Indicator Optimization and Predictive Analysis",
-    "headline": "DNN-driven Indicator Classification Framework",
-    "body": [
-      "A deep neural network framework for classifying stock indicator parameters.",
-      "Uses Sharpe ratio and drawdown-based backtesting metrics."
-    ],
-    "href": "/research/siopa",
-    "links": {
-      "github": "https://github.com/im-habib/SIOPA-Stock-Indicator-Optimization-and-Predictive-Analysis",
-      "paper": "#"
-    },
-    "data": {
-      "status": "ongoing",
-      "period": { "start": "2024", "end": "Present" },
-      "impact": [
-        "Indicator parameter classification",
-        "Backtest-driven optimization"
       ]
     }
   },
@@ -161,7 +111,7 @@
     ],
     "href": "/research/findrl",
     "links": {
-      "github": "https://github.com/im-habib/FinDRL",
+      "github": "https://github.com/quantrl/FinDRL",
       "paper": "#"
     },
     "data": {
